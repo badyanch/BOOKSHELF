@@ -1,8 +1,8 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 @import './base/common';
-// @import './header';
-@import './modal';
-@import './pagination';
+@import './scss/header';
+@import './scss/modal';
+@import './scss/pagination';
 // @import './base/reset';
 // @import './base/fonts';
 @import './base/main-page/categories';
