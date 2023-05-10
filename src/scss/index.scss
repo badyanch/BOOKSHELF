@@ -1,0 +1,18 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+@import './base/common';
+@import './header';
+@import './modal';
+@import './pagination';
+// @import './base/reset';
+// @import './base/fonts';
+@import './base/main-page/categories';
+@import './base/main-page/home-page';
+@import './base/main-page/SupportUkraine';
+
+@import './base/shopingListPage/ShoppingList';
+
+@import './abstracts/mixins';
+@import './abstracts/placeholders';
+@import './abstracts/vars';
+
+@import './components/auth';
