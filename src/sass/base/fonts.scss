@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-style: normal;
+    src: url('./../fonts/DM-Sans-Regular/DM-Sans-Regular.eot'); /* IE9 eot*/
+    src: url('./../fonts/DM-Sans-Regular/DM-Sans-Regular.eot?iefix')
+        format('embedded-opentype'),
+      /* IE6-IE8 */ url('./../fonts/DM-Sans-Regular/DM-Sans-Regular.woff2')
+        format('woff2'),
+      /* chrome、firefox */ url('./../fonts/DM-Sans-Regular/DM-Sans-Regular.woff')
+        format('woff'),
+      /* chrome、firefox */ url('./../fonts/DM-Sans-Regular/DM-Sans-Regular.ttf')
+        format('truetype'),
+      /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        url('./../fonts/DM-Sans-Regular/DM-Sans-Regular.svg#DMSans-Regular')
+        format('svg'); /* iOS 4.1- */
+  }
+  
+  @font-face {
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('./../fonts/DM-Sans-Bold/DM-Sans-Bold.eot'); /* IE9 eot*/
+    src: url('./../fonts/DM-Sans-Bold/DM-Sans-Bold.eot?iefix')
+        format('embedded-opentype'),
+      /* IE6-IE8 */ url('./../fonts/DM-Sans-Bold/DM-Sans-Bold.woff2')
+        format('woff2'),
+      /* chrome、firefox */ url('./../fonts/DM-Sans-Bold/DM-Sans-Bold.woff')
+        format('woff'),
+      /* chrome、firefox */ url('./../fonts/DM-Sans-Bold/DM-Sans-Bold.ttf')
+        format('truetype'),
+      /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        url('./../fonts/DM-Sans-Bold/DM-Sans-Bold.svg#DMSans-Bold') format('svg'); /* iOS 4.1- */
+  }
+  
+  @font-face {
+    font-family: 'DM Sans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('./../fonts/DM-Sans-Medium/DM-Sans-Medium.eot'); /* IE9 eot*/
+    src: url('./../fonts/DM-Sans-Medium/DM-Sans-Medium.eot?iefix')
+        format('embedded-opentype'),
+      /* IE6-IE8 */ url('./../fonts/DM-Sans-Medium/DM-Sans-Medium.woff2')
+        format('woff2'),
+      /* chrome、firefox */ url('./../fonts/DM-Sans-Medium/DM-Sans-Medium.woff')
+        format('woff'),
+      /* chrome、firefox */ url('./../fonts/DM-Sans-Medium/DM-Sans-Medium.ttf')
+        format('truetype'),
+      /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        url('./../fonts/DM-Sans-Medium/DM-Sans-Medium.svg#DMSans-Medium')
+        format('svg'); /* iOS 4.1- */
+  }
+  
+  @font-face {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-style: italic;
+    src: url('./../fonts/DM-Sans-Italic/DM-Sans-Italic.eot'); /* IE9 eot*/
+    src: url('./../fonts/DM-Sans-Italic/DM-Sans-Italic.eot?iefix')
+        format('embedded-opentype'),
+      /* IE6-IE8 */ url('./../fonts/DM-Sans-Italic/DM-Sans-Italic.woff2')
+        format('woff2'),
+      /* chrome、firefox */ url('./../fonts/DM-Sans-Italic/DM-Sans-Italic.woff')
+        format('woff'),
+      /* chrome、firefox */ url('./../fonts/DM-Sans-Italic/DM-Sans-Italic.ttf')
+        format('truetype'),
+      /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        url('./../fonts/DM-Sans-Italic/DM-Sans-Italic.svg#DMSans-Italic')
+        format('svg'); /* iOS 4.1- */
+  }
