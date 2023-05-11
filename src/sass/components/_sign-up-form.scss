@@ -83,10 +83,11 @@
 
 .sign-in {
 	justify-content: center;
-	display: none;
+	align-items: center;
+	display: flex;
 }
 .sign-up {
-	display: block;
+	display: none;
 }
 .wrapper-input {
 	position: relative;
