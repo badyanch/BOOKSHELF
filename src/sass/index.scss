@@ -1,29 +1,26 @@
-@import '~node_modules/modern-normalize/modern-normalize.css';
-@import './base/common';
-@import './base/reset';
-@import './base/fonts';
-@import './base/main-page/categories';
-@import './base/main-page/home-page';
-@import './base/main-page/SupportUkraine';
+@import "~node_modules/modern-normalize/modern-normalize.css";
+@import "./base/common";
+@import "./base/reset";
+@import "./base/fonts";
+@import "./base/main-page/categories";
+@import "./base/main-page/home-page";
+@import "./base/main-page/SupportUkraine";
 
-@import './base/shopingListPage/ShoppingList';
+@import "./base/shopingListPage/ShoppingList";
 
-@import './abstracts/mixins';
-@import './abstracts/placeholders';
-@import './abstracts/vars';
-
-
+@import "./abstracts/mixins";
+@import "./abstracts/placeholders";
+@import "./abstracts/vars";
 
 // components
-@import './components/all-categories';
-@import './components/auth-test';
-@import './components/paginator';
-@import './components/sign-in-form';
-@import './components/sign-up-form';
-@import './components/single-book-card';
-@import './components/single-book-popup';
-@import './components/single-category';
-@import './components/support';
-@import './components/best-sellers';
-@import './components/shopping-list';
-@import './components/back-to-top-button';
+@import "./components/all-categories";
+@import "./components/auth-test";
+@import "./components/paginator";
+@import "./components/authorization";
+@import "./components/single-book-card";
+@import "./components/single-book-popup";
+@import "./components/single-category";
+@import "./components/support";
+@import "./components/best-sellers";
+@import "./components/shopping-list";
+@import "./components/back-to-top-button";
