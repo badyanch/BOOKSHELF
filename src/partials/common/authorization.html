@@ -1,32 +1,32 @@
 <div class="wrapper backdrop-form ">
 	<div class="block-of-forms">
-		<form class="form sign-in ">
-			<button type="button" class="form__close js-modal-close">
+		<form class="form " id="sign-in">
+			<button type="button" class="form__close ">
 				<svg class="button__close" width="20" height="20">
 					<use href="/src/images/svg/icons.svg#icon-x-close"></use>
 				</svg>
 			</button>
 			<div class="wrapper-input">
-				<input class="form__email input" type="email" name="userEmail" placeholder="Email">
+				<input class="form__email input" type="email" name="userEmail" placeholder="Email" required>
 				<svg class="input__mail" width="28" height="28">
 					<use href="/src/images/svg/icons.svg#icon-mail"></use>
 				</svg>
 			</div>
 
 			<div class="wrapper-input">
-				<input class="form__password input" type="password" name="userPassword" placeholder="Password">
+				<input class="form__password input" type="password" name="userPassword" placeholder="Password" required>
 				<svg class="input__lock" width="28" height="28">
 					<use href="/src/images/svg/icons.svg#icon-lock"></use>
 				</svg>
 			</div>
 			<button class="form__submit" type="submit">Sign in</button>
-			<div class="type-of-auth">
-				<button class="form__sign-up 
-btn__auth ">Sign up</button>
-				<button class="form__sing-in btn__auth  currentAuth">Sign in</button>
+			<div class="type-of-auth  ">
+				<button class="form__sign-up btn__auth js__sign-up" type="button">Sign up</button>
+				<button class="form__sign-in btn__auth current-auth" type="button">Sign in</button>
 			</div>
 		</form>
-		<form class="form sign-up">
+
+		<form class="form sign-up active" id="sign-up">
 			<button type="button" class="form__close js-modal-close">
 				<svg width="20" height="20">
 					<use href="/src/images/svg/icons.svg#icon-x-close"></use>
@@ -34,23 +34,22 @@ btn__auth ">Sign up</button>
 			</button>
 			<input class="form__name input" type="text" name="userName" placeholder="Name">
 			<div class="wrapper-input">
-				<input class="form__email input" type="email" name="userEmail" placeholder="Email">
+				<input class="form__email input" type="email" name="userEmail" placeholder="Email" required>
 				<svg class="input__mail" width="28" height="28">
 					<use href="/src/images/svg/icons.svg#icon-mail"></use>
 				</svg>
 			</div>
 
 			<div class="wrapper-input">
-				<input class="form__password input" type="password" name="userPassword" placeholder="Password">
+				<input class="form__password input" type="password" name="userPassword" placeholder="Password" required>
 				<svg class="input__lock" width="28" height="28">
 					<use href="/src/images/svg/icons.svg#icon-lock"></use>
 				</svg>
 			</div>
 			<button class="form__submit" type="submit">Sign up</button>
-			<div class="type-of-auth">
-				<button class="form__sign-up 
-	btn__auth currentAuth">Sign up</button>
-				<button class="form__sing-in btn__auth ">Sign in</button>
+			<div class="type-of-auth ">
+				<button class="form__sign-up btn__auth current-auth " type="button">Sign up</button>
+				<button class="form__sign-in btn__auth js__sign-in" type="button">Sign in</button>
 			</div>
 		</form>
 	</div>

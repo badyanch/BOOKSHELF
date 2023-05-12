@@ -12,6 +12,7 @@
 	align-content: center;
 }
 .form {
+	display: none;
 	position: absolute;
 
 	overflow: auto;
@@ -23,8 +24,8 @@
 	padding-left: 20px;
 	padding-right: 20px;
 
-	display: flex;
 	align-self: center;
+	justify-content: center;
 	flex-direction: column;
 
 	border: 2px solid var(--primary-dark);
@@ -35,11 +36,16 @@
 		width: 335px;
 	}
 	@media screen and (min-width: $tablet) {
+		padding-top: 80px;
+		padding-bottom: 40px;
+		padding-left: 40px;
+		padding-right: 40px;
 		width: 579px;
+		height: 516px;
 	}
 
 	&__submit {
-		margin-bottom: 20px;
+		margin-bottom: 14px;
 		width: 100%;
 		height: 50px;
 
@@ -59,13 +65,17 @@
 		&:focus {
 			background-color: var(--primary-akzent);
 		}
+		@media screen and (min-width: $tablet) {
+			margin-top: 12px;
+			height: 64px;
+		}
 	}
 	&__close {
 		height: 20px;
 		width: 20px;
 		position: absolute;
-		top: 14;
-		right: 14;
+		top: 14px;
+		right: 14px;
 
 		border: 0;
 		padding: 0;
@@ -74,6 +84,10 @@
 		cursor: pointer;
 
 		transition: fill var(--time) var(--cubic);
+		@media screen and (min-width: $tablet) {
+			top: 31px;
+			right: 31px;
+		}
 		&:hover,
 		&:focus {
 			fill: var(--primary-akzent);
@@ -81,14 +95,12 @@
 	}
 }
 
-.sign-in {
+#sign-in {
 	justify-content: center;
 	align-items: center;
 	display: flex;
 }
-.sign-up {
-	display: none;
-}
+
 .wrapper-input {
 	width: 100%;
 	position: relative;
@@ -113,6 +125,10 @@
 
 	letter-spacing: -0.01em;
 	transition: border var(--time) var(--cubic), outline var(--time) var(--cubic);
+	@media screen and (min-width: $tablet) {
+		height: 64px;
+		margin-bottom: 28px;
+	}
 	&::placeholder {
 		text-transform: uppercase;
 	}
@@ -122,16 +138,30 @@
 	}
 
 	&__mail {
+		width: 20px;
+		height: 20px;
 		position: absolute;
 		right: 24px;
-		top: 11px;
+		top: 15px;
 		transition: fill var(--time) var(--cubic);
+		@media screen and (min-width: $tablet) {
+			width: 28px;
+			height: 28px;
+			top: 18px;
+		}
 	}
 	&__lock {
+		width: 20px;
+		height: 20px;
 		position: absolute;
-		right: 24px;
-		top: 11px;
+		right: 26px;
+		top: 15px;
 		transition: fill var(--time) var(--cubic);
+		@media screen and (min-width: $tablet) {
+			width: 28px;
+			height: 28px;
+			top: 18px;
+		}
 	}
 }
 .input:focus-within + .input__mail,
@@ -165,7 +195,12 @@
 		color: var(--primary-akzent);
 	}
 }
-.currentAuth {
+.current-auth {
+	pointer-events: none;
 	text-decoration-line: underline;
 	color: var(--primary-akzent);
+}
+
+.active {
+	display: flex;
 }
