@@ -1,4 +1,4 @@
-import { fetchSelectedCategory } from '../API';
+import { fetchSearchResult } from './fetch-search-result';
 
 const listCategory = document.querySelector('.list-categories');
 
@@ -11,7 +11,7 @@ function getMarkupAllCategory() {
 getMarkupAllCategory();
 
 async function getMarkupCategoryList() {
-  const categoryList = await fetchSelectedCategory('category-list');
+  const categoryList = await fetchSearchResult('category-list');
   const categoryArr = [];
   for (const { list_name } of categoryList) {
     categoryArr.push(list_name);
