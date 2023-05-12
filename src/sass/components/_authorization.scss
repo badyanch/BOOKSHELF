@@ -204,3 +204,10 @@
 .active {
 	display: flex;
 }
+
+.empty {
+	&:focus-within {
+		border: none;
+		outline: 2px solid #ff0000;
+	}
+}
