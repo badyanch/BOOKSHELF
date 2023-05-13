@@ -106,7 +106,7 @@ export class User {
 
 		} catch (error) {
 			console.error(error.message);
-			Notify.failure(error.code);
+			Notify.failure(error.message.name);
 		} finally {
 			Loading.remove()
 		}

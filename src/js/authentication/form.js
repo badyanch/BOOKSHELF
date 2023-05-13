@@ -59,7 +59,9 @@ async function onSubmitSignUp(evt) {
 	evt.preventDefault();
 
 	const { elements: { userName, userEmail, userPassword } } = refEl.formSignUp;
-	await user.signUp(userName.value, userEmail.value, userPassword.value)
+	const email = userEmail.value.toLowerCase()
+
+	await user.signUp(userName.value, email, userPassword.value)
 
 }
 
@@ -68,7 +70,8 @@ async function onSubmitSignIn(evt) {
 
 	const { elements: { userEmail, userPassword } } = refEl.formSignIn;
 
-	user.signIn(userEmail.value, userPassword.value)
+	const email = userEmail.value.toLowerCase()
+	user.signIn(email, userPassword.value)
 }
 
 refEl.checkAuth.addEventListener('click', isLogined)
