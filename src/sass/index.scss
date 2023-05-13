@@ -1,7 +1,10 @@
 @import "~node_modules/modern-normalize/modern-normalize.css";
+@import "./abstracts/vars";
 @import "./base/common";
 @import "./base/reset";
 @import "./base/fonts";
+@import "./abstracts/mixins";
+@import "./abstracts/placeholders";
 @import "./base/main-page/categories";
 @import "./base/main-page/top-books";
 @import "./base/main-page/home-page";
@@ -9,9 +12,6 @@
 
 @import "./base/shopingListPage/ShoppingList";
 
-@import "./abstracts/mixins";
-@import "./abstracts/placeholders";
-@import "./abstracts/vars";
 
 // components
 @import "./components/all-categories";
@@ -25,7 +25,6 @@
 @import "./components/best-sellers";
 @import "./components/shopping-list";
 @import "./components/back-to-top-button";
-
 
 
 
