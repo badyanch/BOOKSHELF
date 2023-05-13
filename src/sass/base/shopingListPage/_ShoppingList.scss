@@ -1,23 +1,35 @@
-.shopping_list {
+.shopping-list {
     margin-top: 40px;
     font-family: 'DM Sans';
   }
 
-.title_shopping_list {
+.shopping-list__title {
     width: 193px;
     font-weight: 700;
     font-size: 32px;
     line-height: 1.19;
     letter-spacing: -0.04em;
     margin-bottom: 40px;
+    margin-left: 20px;
     color: #111111;
+    
+    @media screen and (min-width: 768px){
+        font-size: 48px;
+        line-height: 1.08;      
+        display: inline;  
+    }
+//     @media screen and (min-width: 1440px) {
+//         font-size: 48px;
+//         line-height: 1.08;   
+//   }
+}
+
+  .shopping-list__title-span {
+    color: #4F2EE8;
+    display: inline;
   }
 
-  .title_shopping_list_span {
-    color: #4F2EE8
-  }
-
-  .shopping-list-empty-image {
+  .shopping-list__empty-image {
     background-image: url(../images/shoppinglist/booksMobile.png);
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -25,39 +37,39 @@
     height: 198px;
   }
 
-  @media (min-device-pixel-ratio: 2),
+  @media (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    .shopping-list-empty-image {
+    .shopping-list__empty-image {
       background-image: url(../images/shoppinglist/booksMobile@2x.png);
       background-size: 265px 198px;
     }
   }
 
-  .shopping-list-empty-image {
+  .shopping-list__empty-image {
     background-image: url(../images/shoppinglist/booksTablet.png);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     width: 322px;
     height: 241px;
   }
-  @media (min-device-pixel-ratio: 2),
+  @media (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    .shopping-list-empty-image {
+    .shopping-list__empty-image {
       background-image: url(../images/shoppinglist/booksTablet@2x.png);
       background-size: 322px 241px;
     }
     }
 
-.shopping-list-empty-page {
+.shopping-list__empty-page {
         margin-top: 120px;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
 
-.shopping-list-empty-text {
+.shopping-list__empty-text {
         margin-bottom: 14px;
     
         font-family: 'DM Sans';
@@ -66,5 +78,5 @@
         line-height: 1.29;
         text-align: center;
         letter-spacing: -0.02em;
-        color: var(--text-empty-shoplist);
+        color: rgba(0, 0, 0, 0.6);
       }
