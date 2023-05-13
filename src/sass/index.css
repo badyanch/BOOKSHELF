@@ -304,7 +304,9 @@ address {
   margin-top: 40px;
   font-family: "DM Sans";
 }
-
+.shopping-list__container {
+  margin-top: 40px;
+}
 .shopping-list__title {
   width: 193px;
   font-weight: 700;
@@ -322,9 +324,8 @@ address {
     display: inline;
   }
 }
-
 .shopping-list__title-span {
-  color: #4F2EE8;
+  color: #4f2ee8;
   display: inline;
 }
 
@@ -372,6 +373,196 @@ address {
   text-align: center;
   letter-spacing: -0.02em;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.shoplist-trash {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  margin-top: 24px;
+  margin-right: 24px;
+  width: 34px;
+  height: 34px;
+  background-image: url(../images/svg/trash.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  background-color: #4f2ee8;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.shoplist-icon-amazon {
+  background-image: url(../images/shoppinglist/amazon.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 32px;
+  height: 11px;
+}
+
+.shoplist-icon-ibook {
+  background-image: url(../images/shoppinglist/ibook.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 16px;
+  height: 16px;
+}
+
+.shoplist-icon-bookshop {
+  background-image: url(../images/shoppinglist/bookshop.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 16px;
+  height: 16px;
+  right: 14;
+}
+
+.shoplist-icons {
+  position: absolute;
+  bottom: 14;
+  right: 62;
+  width: 80px;
+  height: 16px;
+  margin-bottom: 10px;
+  margin-right: 14px;
+}
+@media screen and (min-width: 768px) {
+  .shoplist-icons {
+    bottom: 24;
+    right: 56;
+  }
+}
+
+.shoplist-icons-list {
+  gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.shoplist-book-container {
+  width: 996px;
+  height: 213px;
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  width: 335px;
+  height: 170px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+}
+@media screen and (min-width: 768px) {
+  .shoplist-book-container {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    width: 704px;
+    height: 213px;
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    border-radius: 16px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .shoplist-book-container {
+    width: 996px;
+    height: 213px;
+  }
+}
+
+.shoplist-book-img {
+  margin: 14px;
+  width: 100px;
+  height: 142px;
+  border-radius: 8px;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px 30px;
+}
+@media screen and (min-width: 768px) {
+  .shoplist-book-img {
+    margin: 24px;
+    width: 116px;
+    height: 165px;
+    border-radius: 8px;
+    background-color: inherit;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 44px 40px;
+  }
+}
+
+.shoplist-book-title {
+  margin-top: 14px;
+  margin-bottom: 4px;
+  width: 144px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #111111;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 24px;
+  margin-bottom: 4px;
+  height: 18px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.shoplist-book-genre {
+  margin-bottom: 8px;
+  height: 14px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: #b4afaf;
+}
+
+.shoplist-book-description {
+  margin-bottom: 48px;
+  width: 508px;
+  color: #111111;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  text-overflow: ellipsis;
+}
+
+.shoplist-book-author {
+  height: 14px;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
+}
+@media screen and (min-width: 768px) {
+  .shoplist-book-author {
+    margin-bottom: 14px;
+    align-self: flex-end;
+    width: 97px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: -0.04em;
+  }
 }
 
 .auth-component {
