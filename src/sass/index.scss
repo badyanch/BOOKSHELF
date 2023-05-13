@@ -3,6 +3,7 @@
 @import "./base/reset";
 @import "./base/fonts";
 @import "./base/main-page/categories";
+@import "./base/main-page/top-books";
 @import "./base/main-page/home-page";
 @import "./base/main-page/SupportUkraine";
 
@@ -24,3 +25,9 @@
 @import "./components/best-sellers";
 @import "./components/shopping-list";
 @import "./components/back-to-top-button";
+
+
+
+
+@import "./layout/categories";
+@import "./layout/shoppingList";
