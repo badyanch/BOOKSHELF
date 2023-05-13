@@ -1,4 +1,4 @@
 import './js/API';
-import './js/form';
+import './js/authentication/form';
 
 

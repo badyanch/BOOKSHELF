@@ -1,7 +1,6 @@
 import { User } from './user';
 import { Notify } from 'notiflix';
 import { colRef, auth, db } from './firebase'
-import './closeModale'
 
 
 export const refEl = {
