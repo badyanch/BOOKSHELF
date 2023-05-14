@@ -55,3 +55,16 @@ function writeFoundHrefSrc() {
 }
 
 writeFoundHrefSrc();
+
+// rotation gradient
+
+
+const gradientContainer = document.querySelector('.support-menu');
+let deg = 0
+let tick = () => {
+    gradientContainer.style.background = `background linear-gradient(${deg+=0.5}deg,  rgba(79,46,232,1) 0%, rgba(86,86,175,1) 35%, rgba(179,122,240,1) 100%)`
+    requestAnimationFrame(tick)
+}
+requestAnimationFrame(tick)
+
+// `background radial-gradient(${deg++}deg, 183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%)`
