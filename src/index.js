@@ -8,7 +8,9 @@ import './js/test/fetch-search-result';
 import './js/test/markup-category-list';
 import './js/test/markup-top-books';
 
+import './js/test/swiper-supportUkraine';
+
+
 import './js/shoppingList';
 
 import './js/test/mobileMenu';
-

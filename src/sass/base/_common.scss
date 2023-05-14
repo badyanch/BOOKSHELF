@@ -6,6 +6,25 @@ body {
   background-color: var(--bg-light);
 }
 
+.section-categories-suppot-thumb{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0 0 40px;
+
+  @media screen and (min-width: 768px) {
+      flex-direction: row;
+      gap: 32px;
+      margin: 0 0 100px;
+    }
+
+  @media screen and (min-width: 1440px) {
+      flex-direction: column;
+      gap: 86px;
+      margin: 0
+    }
+}
+
 .container {
   max-width: 375px;
   padding-left: 20px;
