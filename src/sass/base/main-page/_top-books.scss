@@ -14,6 +14,7 @@
 }
 
 .top-books-list {
+    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -21,6 +22,9 @@
     margin-top: 40px;
 }
 
+.top-books__item {
+    list-style: none;
+}
 
 .top-books-title {
     font-style: normal;
@@ -52,6 +56,7 @@
 .top-books-categories__list {
     display: flex;
     flex-direction: column;
+    padding: initial;
 
     margin-bottom: 8px;
 
@@ -95,9 +100,12 @@
     &:hover,
     :focus {
         background-color: $secondary-accent-color;
-       
+        color: $primary-text-color-darkt;
     }
 
-   
+    .dark-theme & {
+        background-color: $bg-color-darkt;
+        color: $primary-text-color-darkt;
+    }
 
 }

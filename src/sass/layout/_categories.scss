@@ -5,9 +5,9 @@
     overflow-y: auto;
 }
 
-// .list-categories {
-//     list-style: none;
-// }
+.list-categories {
+    list-style: none;
+}
 
 .category__item {
     margin-top: 32px;
@@ -55,6 +55,7 @@
 }
 
 .category-books__item {
+    list-style: none;
     width: 100%;
     margin-bottom: 40px;
 
@@ -122,6 +123,10 @@
 
 }
 
+.category-books__link {
+    text-decoration: none;
+}
+
 .category-books__link:hover .card-overlay {
     transform: translateY(0);
     opacity: 1;
@@ -137,6 +142,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: var(--primary-dark);
+
 
     .dark-theme & {
         color: $primary-text-color-darkt;
