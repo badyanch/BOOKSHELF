@@ -29,6 +29,17 @@
 
 	--cubic: linear;
 	--time: 300ms;
+
+
+	--mobile-menu-bg: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
+
+
+    --switcher-bg-light: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+	--switcher-bg-dark: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+	--switcher-status: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+	--switcher-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+	--switcher-status-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1),
+		0px 2px 2px rgba(0, 0, 0, 0.1), 1px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 // ---------------------BREAKPOINTS---------------------
