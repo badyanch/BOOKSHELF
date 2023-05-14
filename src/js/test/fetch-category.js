@@ -6,6 +6,5 @@ export async function fetchCategoryList(requestTheme) {
 		throw new Error(response.status);
 	}
 	const category = await response.json();
-	console.log(category);
 	return category;
 }

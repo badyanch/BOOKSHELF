@@ -1,7 +1,7 @@
-<div class="wrapper backdrop-form  backdrop">
+<div class="wrapper  backdrop hidden">
 	<div class="modal">
 		<form class="form " id="sign-in">
-			<button type="button" class="form__close ">
+			<button type="button" class="form__close js-close-form-button">
 				<svg class="button__close" width="20" height="20">
 					<use href="/src/images/svg/icons.svg#icon-x-close"></use>
 				</svg>
@@ -24,14 +24,10 @@
 				<button class="form__sign-up btn__auth js__sign-up" type="button">Sign up</button>
 				<button class="form__sign-in btn__auth current-auth" type="button">Sign in</button>
 			</div>
-			<button type="button" class="check__auth">check auth</button>
-			<button type="button" class="sign__out">signOut</button>
-
 		</form>
-	</div>
-	<div class="modal">
-		<form class="form sign-up active" id="sign-up">
-			<button type="button" class="form__close js-modal-close">
+
+		<form class="form sign-up " id="sign-up">
+			<button type="button" class="form__close js-close-form-button">
 				<svg width="20" height="20">
 					<use href="/src/images/svg/icons.svg#icon-x-close"></use>
 				</svg>
@@ -56,5 +52,6 @@
 				<button class="form__sign-in btn__auth js__sign-in" type="button">Sign in</button>
 			</div>
 		</form>
+
 	</div>
 </div>

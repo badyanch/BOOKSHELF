@@ -1,6 +1,6 @@
-import { User } from './user';
+import { User } from './authorization';
 import { Notify } from 'notiflix';
-import { colRef, auth, db } from './firebase'
+import { auth } from './firebase'
 
 
 export const refEl = {
@@ -9,20 +9,77 @@ export const refEl = {
 	formChangerOnSignUp: document.querySelector('.js__sign-up'),
 	formChangerOnSignIn: document.querySelector('.js__sign-in'),
 	formSubmit: document.querySelector('.form__submit'),
+
 	checkAuth: document.querySelector('.check__auth'),
-	signOutbtn: document.querySelector('.sign__out'),
+	openFormBtn: document.querySelector('.sign-up-btn__page-header'),
+
+	backdrop: document.querySelector('.backdrop'),
 	closeBtns: document.querySelectorAll('.form__close'),
-	modal: document.querySelector('.modal'),
-	backdrop: document.querySelector('.backdrop-form')
+	signOutbtn: document.querySelector('.sign__out'),
 }
-refEl.formSignUp.addEventListener('click', toSignIn)
-refEl.formSignUp.addEventListener('submit', onSubmitSignUp)
+const user = new User()
+// user.signOut()
+let IS_FORM_OPEN = false;
+let IS_USER_LOG = false;
+checkUserLogIn()
+
+async function checkUserLogIn() {
+	try {
+		const result = await user.isAuthenticated();
+		if (result) {
+			console.log('Пользователь аутентифицирован');
+			const userProfile = await user.getInfoUserFromDb(auth.currentUser.email);
+			refEl.openFormBtn.textContent = userProfile.userName
+			IS_USER_LOG = true
+			return
+		} else {
+			console.log('Пользователь не аутентифицирован');
+			refEl.openFormBtn.addEventListener('click', openForm)
+			IS_USER_LOG = false
+			return
+		}
+	} catch (error) {
+		console.error('Ошибка при проверке аутентификации:', error);
+	}
+}
+
+
+function openForm() {
+	showForm()
+	closeForm()
+}
+
+//WHEN CLICK ON SIGNUP
+function showForm() {
+	if (!IS_FORM_OPEN) {
+		refEl.backdrop.classList.remove('hidden')
+		refEl.formSignUp.classList.add('active')
+		IS_FORM_OPEN = true;
+		refEl.formChangerOnSignIn.addEventListener('click', toSignIn)
+		refEl.formSignUp.addEventListener('submit', onSubmitSignUp)
+	}
+}
+function closeForm() {
+	if (IS_FORM_OPEN) {
+		refEl.closeBtns.forEach(function (button) {
+			button.addEventListener('click', function () {
+				let form = button.closest('.form');
+				form.classList.remove('active');
+				refEl.backdrop.classList.add('hidden')
+			});
+		})
+		IS_FORM_OPEN = false;
+	}
+}
+
+
 
 //function is using on sign up form 
 function toSignIn(evt) {
 	if (evt.target === refEl.formChangerOnSignIn) {
+		console.log('toSignIn');
 
-		evt.currentTarget.reset()
+		refEl.formSignIn.reset()
 
 		refEl.formSignUp.classList.toggle('active')//remove class
 		refEl.formSignIn.classList.toggle('active')//add class
@@ -32,7 +89,7 @@ function toSignIn(evt) {
 
 		refEl.formSignIn.addEventListener('submit', onSubmitSignIn) //add evt submit
 		refEl.formSignUp.removeEventListener('submit', onSubmitSignUp)//remover evt submit
-		isLogined();
+
 		return
 	}
 }
@@ -40,7 +97,7 @@ function toSignUp(evt) {
 
 	if (evt.target === refEl.formChangerOnSignUp) {
 		evt.currentTarget.reset()
-
+		console.log('toSignUp');
 		refEl.formSignIn.classList.toggle('active')//remove class
 		refEl.formSignUp.classList.toggle('active')//add class
 
@@ -52,14 +109,11 @@ function toSignUp(evt) {
 		return
 	}
 }
-
-const user = new User()
-
 async function onSubmitSignUp(evt) {
 	evt.preventDefault();
-
+	console.log('click');
 	const { elements: { userName, userEmail, userPassword } } = refEl.formSignUp;
-	await user.signUp(userName.value, userEmail.value, userPassword.value)
+	user.signUp(userName.value, userEmail.value, userPassword.value)
 
 }
 
@@ -71,50 +125,4 @@ async function onSubmitSignIn(evt) {
 	user.signIn(userEmail.value, userPassword.value)
 }
 
-refEl.checkAuth.addEventListener('click', isLogined)
-refEl.signOutbtn.addEventListener('click', onSignOut)
 
-async function isLogined() {
-	try {
-		const result = await user.isAuthenticated()
-		console.log(`loginned: ${result}`);
-
-		if (result) {
-			refEl.formSubmit.disabled = true;
-			Notify.info('You are already logged')
-			user.getInfoUserFromDb(auth.currentUser.email)
-			refEl.signOutbtn.style.display = "block"
-			return
-		}
-		console.dir(refEl.signOutbtn);
-		refEl.signOutbtn.style.display = "none"
-		refEl.formSubmit.disabled = false;
-	} catch {
-		console.log(error);
-	}
-}
-
-async function onSignOut() {
-	user.signOut()
-}
-
-
-
-export let closeFormBtn = refEl.closeBtns.forEach(function (button) {
-	button.addEventListener('click', function () {
-		let form = button.closest('.form');
-		form.classList.remove('active');
-		closeForm()
-		removeAllListeners();
-	});
-});
-function removeAllListeners() {
-	const cloneFormSignUp = refEl.formSignUp.cloneNode(true);
-	refEl.formSignUp.parentNode.replaceChild(cloneFormSignUp, refEl.formSignUp);
-	const cloneFormSignIn = refEl.formSignIn.cloneNode(true);
-	refEl.formSignIn.parentNode.replaceChild(cloneFormSignIn, refEl.formSignIn);
-}
-export function closeForm() {
-	refEl.modal.classList.add('hidden');
-	refEl.backdrop.classList.add('hidden');
-}
