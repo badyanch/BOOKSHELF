@@ -29,9 +29,42 @@
 
 	--cubic: linear;
 	--time: 300ms;
+
+
+	--mobile-menu-bg: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
+
+
+    --switcher-bg-light: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+	--switcher-bg-dark: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+	--switcher-status: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+	--switcher-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+	--switcher-status-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1),
+		0px 2px 2px rgba(0, 0, 0, 0.1), 1px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 // ---------------------BREAKPOINTS---------------------
 $mobile: 375px;
 $tablet: 768px;
 $desktop: 1440px;
+
+// test-vars
+$bg-color: #F6F6F6;
+$bg-color-header: #FFFFFF;
+$primary-text-color: #111111;
+$secondary-text-color: rgba(17, 17, 17, 0.6); 
+$primary-accent-color: #EAC645;
+$secondary-accent-color: #4F2EE8;
+$accent-text-color: #4F2EE8;
+$logo-color: #000000;
+$primary-button-pagination-color: #111111;
+$secondary-button-pagination-color: #EAC645;
+$category-title-color: #B4AFAF;
+
+
+$bg-color-darkt: #202024;
+$bg-color-header-darkt: #111111;
+$primary-text-color-darkt: #FFFFFF;
+$secondary-text-color-darkt: rgba(255, 255, 255, 0.6);
+$logo-color-darkt: #F3F3F3;
+$button-pagination-color-darkt: #FFFFFF;
+$tertiary-text-color-darkt: #B4AFAF;
