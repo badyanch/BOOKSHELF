@@ -15,109 +15,64 @@ export const refEl = {
 	modal: document.querySelector('.modal'),
 	backdrop: document.querySelector('.backdrop-form')
 }
-refEl.formSignUp.addEventListener('click', toSignIn)
-refEl.formSignUp.addEventListener('submit', onSubmitSignUp)
-
-//function is using on sign up form 
-function toSignIn(evt) {
-	if (evt.target === refEl.formChangerOnSignIn) {
-
-		evt.currentTarget.reset()
-
-		refEl.formSignUp.classList.toggle('active')//remove class
-		refEl.formSignIn.classList.toggle('active')//add class
-
-		refEl.formSignUp.removeEventListener('click', toSignIn) //remove evt
-		refEl.formSignIn.addEventListener('click', toSignUp) //add evt
-
-		refEl.formSignIn.addEventListener('submit', onSubmitSignIn) //add evt submit
-		refEl.formSignUp.removeEventListener('submit', onSubmitSignUp)//remover evt submit
-		isLogined();
-		return
-	}
+export function openModal() {
+	refEl.formSignUp.addEventListener('click', toSignIn)
+	refEl.formSignUp.addEventListener('submit', onSubmitSignUp)
+	refEl.backdrop.classList.toggle('hidden');
+	refEl.formSignUp.classList.toggle('active');
 }
-function toSignUp(evt) {
+//function is using on login form 
+function toggleForms(evt) {
+	const currentForm = evt.currentTarget;
+	const otherForm = currentForm === refEl.formSignUp ? refEl.formSignIn : refEl.formSignUp;
 
-	if (evt.target === refEl.formChangerOnSignUp) {
-		evt.currentTarget.reset()
+	currentForm.reset();
+	currentForm.classList.toggle('active');
+	otherForm.classList.toggle('active');
 
-		refEl.formSignIn.classList.toggle('active')//remove class
-		refEl.formSignUp.classList.toggle('active')//add class
+	currentForm.removeEventListener('click', toggleForms);
+	otherForm.addEventListener('click', toggleForms);
 
-		refEl.formSignIn.removeEventListener('click', toSignUp)//remove evt 
-		refEl.formSignUp.addEventListener('click', toSignIn)// add evt
+	currentForm.addEventListener('submit', onSubmitForm);
+	otherForm.removeEventListener('submit', onSubmitForm);
 
-		refEl.formSignUp.addEventListener('submit', onSubmitSignUp)//add evt submit
-		refEl.formSignIn.removeEventListener('submit', onSubmitSignIn)//remove evt submit
-		return
-	}
+	isLogined();
 }
+
+refEl.formChangerOnSignUp.addEventListener('click', toggleForms);
+refEl.formChangerOnSignIn.addEventListener('click', toggleForms);
 
 const user = new User()
 
-async function onSubmitSignUp(evt) {
+async function onSubmitForm(evt) {
 	evt.preventDefault();
 
-	const { elements: { userName, userEmail, userPassword } } = refEl.formSignUp;
-	const email = userEmail.value.toLowerCase()
+	const form = evt.currentTarget;
+	const { elements } = form;
+	const { userName, userEmail, userPassword } = elements;
+	const email = userEmail.value.toLowerCase();
 
-	await user.signUp(userName.value, email, userPassword.value)
+	if (form === refEl.formSignUp) {
 
-}
+		await user.signUp(userName.value, email, userPassword.value);
+	} else if (form === refEl.formSignIn) {
 
-async function onSubmitSignIn(evt) {
-	evt.preventDefault();
-
-	const { elements: { userEmail, userPassword } } = refEl.formSignIn;
-
-	const email = userEmail.value.toLowerCase()
-	user.signIn(email, userPassword.value)
-}
-
-refEl.checkAuth.addEventListener('click', isLogined)
-refEl.signOutbtn.addEventListener('click', onSignOut)
-
-async function isLogined() {
-	try {
-		const result = await user.isAuthenticated()
-		console.log(`loginned: ${result}`);
-
-		if (result) {
-			refEl.formSubmit.disabled = true;
-			Notify.info('You are already logged')
-			user.getInfoUserFromDb(auth.currentUser.email)
-			refEl.signOutbtn.style.display = "block"
-			return
-		}
-		console.dir(refEl.signOutbtn);
-		refEl.signOutbtn.style.display = "none"
-		refEl.formSubmit.disabled = false;
-	} catch {
-		console.log(error);
+		await user.signIn(email, userPassword.value);
 	}
 }
 
-async function onSignOut() {
-	user.signOut()
-}
 
 
 
-export let closeFormBtn = refEl.closeBtns.forEach(function (button) {
+
+
+refEl.closeBtns.forEach(function (button) {
 	button.addEventListener('click', function () {
 		let form = button.closest('.form');
 		form.classList.remove('active');
+		form.removeEventListener()
 		closeForm()
-		removeAllListeners();
 	});
 });
-function removeAllListeners() {
-	const cloneFormSignUp = refEl.formSignUp.cloneNode(true);
-	refEl.formSignUp.parentNode.replaceChild(cloneFormSignUp, refEl.formSignUp);
-	const cloneFormSignIn = refEl.formSignIn.cloneNode(true);
-	refEl.formSignIn.parentNode.replaceChild(cloneFormSignIn, refEl.formSignIn);
-}
-export function closeForm() {
-	refEl.modal.classList.add('hidden');
-	refEl.backdrop.classList.add('hidden');
-}
+
+

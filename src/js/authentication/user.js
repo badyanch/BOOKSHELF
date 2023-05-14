@@ -3,9 +3,7 @@ import { Notify, Loading } from 'notiflix'
 import { getAuth, updateProfile, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth'
 import { colRef, auth, db } from './firebase'
 import { addDoc, collection, query, where, getDocs } from 'firebase/firestore'
-import { refEl, closeForm } from "./form"
-
-
+import { refElHead } from "./header"
 export class User {
 
 	constructor() {
@@ -47,8 +45,8 @@ export class User {
 			const userId = userDoc.id;
 
 			const user = { ...userData, id: userId };
-			console.log(user);
-			return user
+			this.currentUser = user
+			return
 		} catch (error) {
 			console.error(error.message);
 			return
@@ -98,25 +96,36 @@ export class User {
 	}
 	async signIn(userEmail, userPassword) {
 		try {
-			Loading.hourglass()
+			Loading.hourglass();
 			await signInWithEmailAndPassword(auth, userEmail.trim(), userPassword.trim());
-			refEl.formSignIn.reset()
-			closeForm()
-			Notify.success('You logged successfully');
+			refEl.formSignIn.reset();
 
+
+			const result = await this.isAuthenticated();
+			if (result) {
+				const currentUser = await this.getInfoUserFromDb(userEmail.trim());
+				refElHead.btnAuth.textContent = currentUser.userName;
+			}
+
+			Notify.success('You logged in successfully');
 		} catch (error) {
 			console.error(error.message);
 			Notify.failure(error.message.name);
 		} finally {
-			Loading.remove()
+			Loading.remove();
 		}
 	}
+
 	async signOut() {
 		try {
 			Loading.hourglass()
 
 			await signOut(auth);
 			refEl.formSubmit.disabled = false;
+			const result = await this.isAuthenticated();
+			if (!result) {
+				refElHead.btnAuth.textContent = "SignIn/SignOut";
+			}
 			closeForm()
 			Notify.success('Signed out');
 		} catch (error) {
