@@ -15,6 +15,8 @@ export const swiper = new Swiper(".mySwiper",( {
            mousewheel: {
              forceToAxis: true,
         },
+          noSwiping: true,
+          noSwipingClass: 'swiper-slide',
            
           navigation: {
             nextEl: ".support-menu__swiperbutton",
@@ -26,10 +28,11 @@ export const swiper = new Swiper(".mySwiper",( {
       
 
 let sliderButtonCounter = 0;
-sliderButton = document.querySelectorAll('.support-menu__swiperbutton');
+sliderButton = document.querySelector('.support-menu__swiperbutton');
 
+// console.log(sliderButton);
 
-sliderButton[0].addEventListener('click', goToStartListClick)
+sliderButton.addEventListener('click', goToStartListClick)
         
 export function goToStartListClick(evt) { // slider 'goToBeginningFunction'
     sliderButtonCounter++

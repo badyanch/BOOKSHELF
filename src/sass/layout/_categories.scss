@@ -1,8 +1,11 @@
 .section-categories {
-    width: 356px;
-    max-height: 472px;
+    width: 335px;
+    height: 352px;
     overflow-x: hidden;
     overflow-y: auto;
+    @media screen and (min-width: 768px) {
+            height: 472px;
+        }
 }
 
 .list-categories {
