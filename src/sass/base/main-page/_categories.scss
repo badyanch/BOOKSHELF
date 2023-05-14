@@ -1,12 +1,22 @@
+
 .section-categories {
+    // width: 356px;
+    height: 352px;
+}
+.page-nav__link.section-categories {
     width: 356px;
     max-height: 472px;
     overflow-x: hidden;
     overflow-y: auto;
+    @media screen and (min-width: 768px) {
+           height: 472px;
+           width: 335px;
+        }
 }
 
 .list-categories {
     list-style: none;
+    padding: 0;
 }
 
 .category__item {
@@ -37,6 +47,7 @@
         gap: 40px 24px;
         margin-top: 40px;
     }
+    
 }
 
 .category-books__item {

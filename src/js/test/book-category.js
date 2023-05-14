@@ -27,17 +27,22 @@ async function onClickCategory(evt) {
 
 function removeMarkup() {
   const sectionTitle = document.querySelector('.books-cards__title');
-  sectionTitle.remove();
+  if (sectionTitle) {
+    sectionTitle.remove();
+  }
   removeCurrentClass();
   bookSection.innerHTML = '';
 }
 
 function addHeading(string) {
-  const arr = string.split(' ');
-  const lastElement = arr.pop(arr[arr.length - 1]);
-  const markup = `<h1 class="books-cards__title">${arr.join(' ')}
-        <span class="books-cards__title-accent"> ${lastElement}</span></h1>`;
-  bookSection.insertAdjacentHTML('beforebegin', markup);
+  const sectionTitle = document.querySelector('.books-cards__title');
+  if (!sectionTitle) {
+    const arr = string.split(' ');
+    const lastElement = arr.pop(arr[arr.length - 1]);
+    const markup = `<h1 class="books-cards__title">${arr.join(' ')}
+	        <span class="books-cards__title-accent"> ${lastElement}</span></h1>`;
+    bookSection.insertAdjacentHTML('beforebegin', markup);
+  }
 }
 
 function removeCurrentClass() {
