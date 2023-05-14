@@ -1,6 +1,6 @@
 .scrollBtn {
   position: fixed;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   bottom: 140px;
@@ -41,3 +41,6 @@
   fill: var(--primary-light);
   z-index: 998;
 }
+
+
+ 
