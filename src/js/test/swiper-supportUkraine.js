@@ -28,7 +28,7 @@ export const swiper = new Swiper(".mySwiper",( {
       
 
 let sliderButtonCounter = 0;
-sliderButton = document.querySelector('.support-menu__swiperbutton');
+const sliderButton = document.querySelector('.support-menu__swiperbutton');
 
 // console.log(sliderButton);
 
