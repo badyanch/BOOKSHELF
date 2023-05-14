@@ -12,6 +12,9 @@ import './js/test/fetch-search-result';
 import './js/test/markup-category-list';
 import './js/test/markup-top-books';
 
+
+import './js/test/pop-up';
+
 import './js/test/swiper-supportUkraine';
 
 
