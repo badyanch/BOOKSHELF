@@ -1,185 +1,110 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="./sass/index.scss" />
-  </head>
 
-  <body>
-    <!--  -->
-    <include src="./partials/common/header.html"></include>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./sass/index.scss" />
+</head>
 
- <a class="page-nav__link" href="./ShoppingPage.html"></a>
-    <main>
-      <div class="main container">
-        <aside class="aside">
-          <div class="section-categories-suppot-thumb">
-            <section class="section-categories">
-              <ul class="list-categories"></ul>
-            </section>
-            <section class="section-support">
-              <div class="support-menu">
-                <div class="support-menu__title-thumb">
-                  <h2 class="support-menu__tittle">Support Ukraine</h2>
-                  <svg class="support-menu__icon-coat" width="20" height="32">
-                    <use
-                      href="/src/images/svg/icons.svg#icon-coat-of-arms-Ukraine"
-                    ></use>
+<body>
+  <!--  -->
+  <include src="./partials/common/header.html"></include>
+
+  <a class="page-nav__link" href="./ShoppingPage.html"></a>
+  <main>
+    <div class="main container">
+      <aside class="aside">
+        <div class="section-categories-suppot-thumb">
+          <section class="section-categories">
+            <ul class="list-categories"></ul>
+          </section>
+          <section class="section-support">
+            <div class="support-menu">
+              <div class="support-menu__title-thumb">
+                <h2 class="support-menu__tittle">Support Ukraine</h2>
+                <svg class="support-menu__icon-coat" width="20" height="32">
+                  <use href="/src/images/svg/icons.svg#icon-coat-of-arms-Ukraine"></use>
+                </svg>
+              </div>
+              <div class="support-menu__swiper mySwiper">
+                <ul class="swiper-wrapper support-menu__list">
+                  <li class="swiper-slide support-menu__item" data-index="1">
+                    <p>01</p>
+                    <a class="swiper-slide__link-js" target="_blank" rel="noreferrer noopener" href=""><img
+                        class="swiper-slide__img-js" src="./images/save to Ukraine/3.png" alt="sdasd" /></a>
+                  </li>
+                  <li class="swiper-slide support-menu__item" data-index="2">
+                    <p>02</p>
+                    <a class="swiper-slide__link-js" target="_blank" rel="noreferrer noopener" href=""><img
+                        class="swiper-slide__img-js" src="./images/save to Ukraine/1.png" alt="sdasd" /></a>
+                  </li>
+                  <li class="swiper-slide support-menu__item" data-index="3">
+                    <p>03</p>
+                    <a class="swiper-slide__link-js" target="_blank" rel="noreferrer noopener" href=""><img
+                        class="swiper-slide__img-js" src="./images/save to Ukraine/2.png" alt="sdasd" /></a>
+                  </li>
+                  <li class="swiper-slide support-menu__item" data-index="4">
+                    <p>04</p>
+                    <a class="swiper-slide__link-js" target="_blank" rel="noreferrer noopener" href=""><img
+                        class="swiper-slide__img-js" src="./images/save to Ukraine/4.png" alt="sdasd" /></a>
+                  </li>
+                  <li class="swiper-slide support-menu__item" data-index="5">
+                    <p>05</p>
+                    <a class="swiper-slide__link-js" target="_blank" rel="noreferrer noopener" href=""><img
+                        class="swiper-slide__img-js" src="./images/save to Ukraine/5.png" alt="sdasd" /></a>
+                  </li>
+                  <li class="swiper-slide support-menu__item" data-index="6">
+                    <p>06</p>
+                    <a class="swiper-slide__link-js" target="_blank" rel="noreferrer noopener" href=""><img
+                        class="swiper-slide__img-js" src="./images/save to Ukraine/6.png" alt="sdasd" /></a>
+                  </li>
+                  <li class="swiper-slide support-menu__item" data-index="7">
+                    <p>07</p>
+                    <a class="swiper-slide__link-js" target="_blank" rel="noreferrer noopener" href=""><img
+                        class="swiper-slide__img-js" src="./images/save to Ukraine/7.png" alt="sdasd" /></a>
+                  </li>
+                  <li class="swiper-slide support-menu__item" data-index="8">
+                    <p>08</p>
+                    <a class="swiper-slide__link-js" target="_blank" rel="noreferrer noopener" href=""><img
+                        class="swiper-slide__img-js" src="./images/save to Ukraine/8.png" alt="sdasd" /></a>
+                  </li>
+                  <li class="swiper-slide support-menu__item" data-index="9">
+                    <p>09</p>
+                    <a class="swiper-slide__link-js" target="_blank" rel="noreferrer noopener" href=""><img
+                        class="swiper-slide__img-js" src="./images/save to Ukraine/9.png" alt="sdasd" /></a>
+                  </li>
+                </ul>
+                <div class="support-menu__swiperbutton">
+                  <svg width="20" height="20">
+                    <use href="/src/images/svg/icons.svg#icon-arrow-down"></use>
                   </svg>
                 </div>
-                <div class="support-menu__swiper mySwiper">
-                  <ul class="swiper-wrapper support-menu__list">
-                    <li class="swiper-slide support-menu__item" data-index="1">
-                      <p>01</p>
-                      <a
-                        class="swiper-slide__link-js"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        href=""
-                        ><img
-                          class="swiper-slide__img-js"
-                          src="./images/save to Ukraine/3.png"
-                          alt="sdasd"
-                      /></a>
-                    </li>
-                    <li class="swiper-slide support-menu__item" data-index="2">
-                      <p>02</p>
-                      <a
-                        class="swiper-slide__link-js"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        href=""
-                        ><img
-                          class="swiper-slide__img-js"
-                          src="./images/save to Ukraine/1.png"
-                          alt="sdasd"
-                      /></a>
-                    </li>
-                    <li class="swiper-slide support-menu__item" data-index="3">
-                      <p>03</p>
-                      <a
-                        class="swiper-slide__link-js"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        href=""
-                        ><img
-                          class="swiper-slide__img-js"
-                          src="./images/save to Ukraine/2.png"
-                          alt="sdasd"
-                      /></a>
-                    </li>
-                    <li class="swiper-slide support-menu__item" data-index="4">
-                      <p>04</p>
-                      <a
-                        class="swiper-slide__link-js"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        href=""
-                        ><img
-                          class="swiper-slide__img-js"
-                          src="./images/save to Ukraine/4.png"
-                          alt="sdasd"
-                      /></a>
-                    </li>
-                    <li class="swiper-slide support-menu__item" data-index="5">
-                      <p>05</p>
-                      <a
-                        class="swiper-slide__link-js"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        href=""
-                        ><img
-                          class="swiper-slide__img-js"
-                          src="./images/save to Ukraine/5.png"
-                          alt="sdasd"
-                      /></a>
-                    </li>
-                    <li class="swiper-slide support-menu__item" data-index="6">
-                      <p>06</p>
-                      <a
-                        class="swiper-slide__link-js"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        href=""
-                        ><img
-                          class="swiper-slide__img-js"
-                          src="./images/save to Ukraine/6.png"
-                          alt="sdasd"
-                      /></a>
-                    </li>
-                    <li class="swiper-slide support-menu__item" data-index="7">
-                      <p>07</p>
-                      <a
-                        class="swiper-slide__link-js"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        href=""
-                        ><img
-                          class="swiper-slide__img-js"
-                          src="./images/save to Ukraine/7.png"
-                          alt="sdasd"
-                      /></a>
-                    </li>
-                    <li class="swiper-slide support-menu__item" data-index="8">
-                      <p>08</p>
-                      <a
-                        class="swiper-slide__link-js"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        href=""
-                        ><img
-                          class="swiper-slide__img-js"
-                          src="./images/save to Ukraine/8.png"
-                          alt="sdasd"
-                      /></a>
-                    </li>
-                    <li class="swiper-slide support-menu__item" data-index="9">
-                      <p>09</p>
-                      <a
-                        class="swiper-slide__link-js"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        href=""
-                        ><img
-                          class="swiper-slide__img-js"
-                          src="./images/save to Ukraine/9.png"
-                          alt="sdasd"
-                      /></a>
-                    </li>
-                  </ul>
-                  <div class="support-menu__swiperbutton">
-                    <svg width="20" height="20">
-                      <use href="/src/images/svg/icons.svg#icon-arrow-down"></use>
-                    </svg>
-                  </div>
-                </div>
               </div>
-            </section>
-                    </aside>
-                    <section class="section-books-cards">
-            <h1 class="books-cards__title"></h1>
-            <ul class="books-cards__list"></ul>
-                        </section>
-           
-          </div>
-      </div>
-    </main>
+            </div>
+          </section>
+      </aside>
+      <section class="section-books-cards">
+        <h1 class="books-cards__title"></h1>
+        <ul class="books-cards__list"></ul>
+      </section>
 
-    <div class="book-backdrop is-hidden">
-      <include src="./partials/HomePage/popUp.html"></include>
     </div>
+    </div>
+  </main>
 
-    <!--  -->
-    <include src="./partials/common/authorization.html"></include>
-    <include src="./partials/HomePage/scroll.html"></include>      
-    
+  <div class="book-backdrop is-hidden">
+    <include src="./partials/HomePage/popUp.html"></include>
+  </div>
 
-    <script type="module" src="./index.js"></script>
-  </body>
+  <!--  -->
+  <include src="./partials/common/authorization.html"></include>
+  <include src="./partials/HomePage/scroll.html"></include>
+
+
+  <script type="module" src="./index.js"></script>
+</body>
+
 </html>

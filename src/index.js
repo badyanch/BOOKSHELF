@@ -16,10 +16,8 @@ import './js/test/swiper-supportUkraine';
 
 import './js/shoppingList';
 
-
 import './js/test/mobileMenu';
 
 import './js/scroll';
 
 import './js/header/index';
-
