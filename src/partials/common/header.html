@@ -1,151 +1,110 @@
 <header class="page-header">
-  <div class="container page-header__container">
-    <a class="logo" href="./index.html">
-      <svg width="24" height="24">
-        <use href="./images/icons.svg#icon-logo"></use>
-      </svg>
-      <svg class="logo__icon" width="77" height="13.27">
-        <use href="./images/icons.svg#icon-text-logo"></use>
-      </svg>
-    </a>
+	<div class="container page-header__container">
+		<a class="logo" href="./index.html">
+			<svg width="24" height="24">
+				<use href="./images/icons.svg#icon-logo"></use>
+			</svg>
+			<svg class="logo__icon" width="77" height="13.27">
+				<use href="./images/icons.svg#icon-text-logo"></use>
+			</svg>
+		</a>
 
-    <nav class="page-nav page-header__page-nav">
-      <ul class="page-nav__list list">
-        <li>
-          <a class="page-nav__link" href="./index.html">Home</a>
-        </li>
-        <li>
-          <a class="page-nav__link" href="./ShoppingPage.html"
-            >Shopping list
-            <svg class="page-nav__icon" width="20" height="20">
-              <use href="./images/icons.svg#icon-shopping-list"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </nav>
+		<nav class="page-nav page-header__page-nav">
+			<ul class="page-nav__list list">
+				<li>
+					<a class="page-nav__link" href="./index.html">Home</a>
+				</li>
+				<li>
+					<a class="page-nav__link" href="./ShoppingPage.html">Shopping list
+						<svg class="page-nav__icon" width="20" height="20">
+							<use href="./images/icons.svg#icon-shopping-list"></use>
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</nav>
 
-    <label class="switcher-theme" aria-label="theme switcher">
-      <input
-        type="checkbox"
-        class="switcher-theme__checkbox visually-hidden js-switcher-theme"
-      />
+		<label class="switcher-theme" aria-label="theme switcher">
+			<input type="checkbox" class="switcher-theme__checkbox visually-hidden js-switcher-theme" />
 
-      <span class="switcher-theme__status"></span>
-    </label>
+			<span class="switcher-theme__status"></span>
+		</label>
 
-    <div class="page-header__user-container auth-component">
-      <button class="user js-user" type="button">
-        <div class="user__box">
-          <svg
-            class="user__avatar"
-            aria-label="user avatar"
-            width="19"
-            height="19"
-            fill="#4F2EE8"
-          >
-            <use href="./images/icons.svg#icon-user"></use>
-          </svg>
-        </div>
+		<div class="page-header__user-container auth-component">
+			<button class="user js-user" type="button">
+				<div class="user__box">
+					<svg class="user__avatar" aria-label="user avatar" width="19" height="19" fill="#4F2EE8">
+						<use href="./images/icons.svg#icon-user"></use>
+					</svg>
+				</div>
 
-        <p class="user__name auth-component__user-name">User name</p>
+				<p class="user__name auth-component__user-name">User name</p>
 
-        <svg class="user__icon" width="23" height="26">
-          <use href="./images/icons.svg#icon-triangle-down"></use>
-        </svg>
-      </button>
+				<svg class="user__icon" width="23" height="26">
+					<use href="./images/icons.svg#icon-triangle-down"></use>
+				</svg>
+			</button>
 
-      <div class="page-header__btns-box">
-        <button class="header-btn log-out-btn user__log-out-btn" type="button">
-          Log out
-        </button>
-      </div>
-    </div>
+			<div class="page-header__btns-box">
+				<button class="header-btn log-out-btn user__log-out-btn" type="button">
+					Log out
+				</button>
+			</div>
+		</div>
 
-    <button
-      class="header-btn sign-up-btn sign-up-btn__page-header js-open-form-modal"
-      type="button"
-    >
-      Sign up
-    </button>
+		<button class="header-btn sign-up-btn sign-up-btn__page-header " type="button">
+			Sign up
+		</button>
 
-    <div class="page-header__btn-container">
-      <button
-        class="menu-btn js-open-menu"
-        type="button"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        <svg
-          class="menu-btn__icon"
-          width="28"
-          height="28"
-          aria-label="Mobile menu call button"
-        >
-          <use href="./images/icons.svg#icon-align-left"></use>
-        </svg>
-      </button>
+		<div class="page-header__btn-container">
+			<button class="menu-btn js-open-menu" type="button" aria-expanded="false" aria-controls="mobile-menu">
+				<svg class="menu-btn__icon" width="28" height="28" aria-label="Mobile menu call button">
+					<use href="./images/icons.svg#icon-align-left"></use>
+				</svg>
+			</button>
 
-      <button
-        class="menu-btn menu-btn--close js-close-menu menu-btn--hide"
-        type="button"
-      >
-        <svg
-          class="menu-btn__icon"
-          width="28"
-          height="28"
-          aria-label="Button to close the mobile menu"
-        >
-          <use href="./images/icons.svg#icon-cross"></use>
-        </svg>
-      </button>
-    </div>
-  </div>
+			<button class="menu-btn menu-btn--close js-close-menu menu-btn--hide" type="button">
+				<svg class="menu-btn__icon" width="28" height="28" aria-label="Button to close the mobile menu">
+					<use href="./images/icons.svg#icon-cross"></use>
+				</svg>
+			</button>
+		</div>
+	</div>
 </header>
 
 <div class="menu-container js-menu-container" id="mobile-menu">
-  <div class="container menu-container__container">
-    <div class="user">
-      <div class="user__box">
-        <svg
-          class="user__avatar"
-          aria-label="user avatar"
-          width="19"
-          height="19"
-          fill="#4F2EE8"
-        >
-          <use href="./images/icons.svg#icon-user"></use>
-        </svg>
-      </div>
+	<div class="container menu-container__container">
+		<div class="user">
+			<div class="user__box">
+				<svg class="user__avatar" aria-label="user avatar" width="19" height="19" fill="#4F2EE8">
+					<use href="./images/icons.svg#icon-user"></use>
+				</svg>
+			</div>
 
-      <p class="user__name">User name</p>
-    </div>
+			<p class="user__name">User name</p>
+		</div>
 
-    <nav class="page-nav menu-container__page-nav">
-      <ul class="page-nav__list list">
-        <li>
-          <a class="page-nav__link" href="./index.html">Home</a>
-        </li>
-        <li>
-          <a class="page-nav__link" href="./ShoppingPage.html"
-            >Shopping list
-            <svg class="page-nav__icon" width="20" height="20">
-              <use href="./images/icons.svg#icon-shopping-list"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </nav>
+		<nav class="page-nav menu-container__page-nav">
+			<ul class="page-nav__list list">
+				<li>
+					<a class="page-nav__link" href="./index.html">Home</a>
+				</li>
+				<li>
+					<a class="page-nav__link" href="./ShoppingPage.html">Shopping list
+						<svg class="page-nav__icon" width="20" height="20">
+							<use href="./images/icons.svg#icon-shopping-list"></use>
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</nav>
 
-    <button
-      class="header-btn log-out-btn auth-component__sign-out-button"
-      type="button"
-    >
-      Log out
-    </button>
+		<button class="header-btn log-out-btn auth-component__sign-out-button" type="button">
+			Log out
+		</button>
 
-    <button class="header-btn sign-up-btn js-open-form-modal" type="button">
-      Sign up
-    </button>
-  </div>
+		<button class="header-btn sign-up-btn js-open-form-modal" type="button">
+			Sign up
+		</button>
+	</div>
 </div>

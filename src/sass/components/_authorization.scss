@@ -1,11 +1,6 @@
 $animation-duration: 0.3s;
 $backdrop-opacity: 0.5;
 
-.backdrop-form {
-	height: 100vh;
-	background: var(--gradient);
-	position: relative;
-}
 .block-of-forms {
 	position: relative;
 	left: 50%;
@@ -204,6 +199,7 @@ $backdrop-opacity: 0.5;
 
 .active {
 	display: flex;
+	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -223,7 +219,7 @@ $backdrop-opacity: 0.5;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: black;
+	background: var(--gradient);
 	z-index: 2;
 	transition: opacity $animation-duration;
 
