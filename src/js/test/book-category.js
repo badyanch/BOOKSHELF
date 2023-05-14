@@ -76,27 +76,5 @@ function createMarkupBooks(category) {
   bookSection.insertAdjacentHTML('beforeend', markup);
 }
 
-export async function getAllTopBooks() {
-  const { data } = await fetchTopBooks();
-  categoriesRoot.insertAdjacentHTML('beforeend', createMarkupAllBooks(data));
-
-  const booksList = document.querySelector('.top-books__item');
-  booksList.addEventListener('click', bestSellersClickHandler);
-}
-getAllTopBooks();
-
-function bestSellersClickHandler(event) {
-  if (event.target.closest('.category-books__item')) {
-    const currentBook = event.target.closest('.category-books__item');
-    const bookID = currentBook.dataset.id;
-    console.log(bookID);
-  } else if (event.target.classList.contains('card-overlay')) {
-    const currentCategory = event.target.closest('.category-books__item')
-      .children[0];
-    const categoryName = currentCategory.textContent;
-    console.log(categoryName);
-  }
-}
-
 export { createMarkupBooks };
 export { addHeading };
