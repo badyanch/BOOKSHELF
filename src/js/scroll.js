@@ -1,25 +1,14 @@
-const button = document.querySelector(".scrollBtn");
 
-function checkScrollVisibility() {
-  const windowHeight = window.innerHeight; 
-    const bodyHeight = window.pageYOffset; 
     
-  if (bodyHeight > windowHeight) {
-    button.removeAttribute = ("hidden");
+window.addEventListener('scroll', function () {
+  const button = document.querySelector('.scrollBtn');
+  if (window.pageYOffset > 0) {
+    button.style.display = 'flex';
   } else {
-    button.setAttribute =("hidden", true);
+    button.style.display = 'none';
   }
-}
+});
 
-checkScrollVisibility();
-
-
-window.addEventListener('resize', checkScrollVisibility);
-window.addEventListener('scroll', checkScrollVisibility);
-
-button.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
+document.querySelector('.scrollBtn').addEventListener('click', function () {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
