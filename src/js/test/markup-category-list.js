@@ -11,6 +11,8 @@ function getMarkupAllCategory() {
 getMarkupAllCategory();
 
 async function getMarkupCategoryList() {
+
+	
 	const categoryList = await fetchSearchResult('category-list');
 	const categoryArr = [];
 	for (const { list_name } of categoryList) {

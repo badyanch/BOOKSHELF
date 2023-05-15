@@ -56,7 +56,11 @@ function removeCurrentClass() {
   }
 }
 
+
+
 function createMarkupBooks(category) {
+  bookSection.innerHTML = ''; // del
+  
   const markup = category
     .map(item => {
       const { _id, book_image, title, author } = item;
@@ -73,6 +77,7 @@ function createMarkupBooks(category) {
     </li>`;
     })
     .join('');
+
   bookSection.insertAdjacentHTML('beforeend', markup);
 }
 
