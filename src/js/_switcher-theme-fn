@@ -10,7 +10,6 @@ export function onSwitcherClick() {
     const element = document.createElement("style");
     element.setAttribute("type", "text/css");
     element.appendChild(document.createTextNode(css));
-    element.setAttribute("href", "https://www.example.com");
     element.classList.add("style-class");
     document.head.appendChild(element);
     
