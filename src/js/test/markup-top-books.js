@@ -98,7 +98,7 @@ async function onClickSeeMore(evt) {
 	refs.booksCardsTitle = document.querySelector('.books-cards__title');
 	refs.booksCardsTitle.remove();
 	addHeading(category);
-	refs.booksCardsList.innerHTML = '';
-	const categoryItem = await fetchCategoryList(category);
+	// refs.booksCardsList.innerHTML = '';
+	const categoryItem = await fetchCategoryList(category); // category fetch querry
 	createMarkupBooks(categoryItem);
 }
