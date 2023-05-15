@@ -6,7 +6,19 @@ import { STORAGE_KEY } from '../shopping-card-storage';
 import { newArray } from '../shopping-card-storage';
 
 function createMarkupBooks(category) {
-  const { _id, list_name, book_image, title, author } = category;
+  const { _id, list_name, book_image, title, author, buy_links } = category;
+  const socialMarkup = buy_links
+    .map(item => {
+      const a = './images/png/amazon-shop.png';
+
+      const newSocialMarkup = `<div class="book-shops-links">
+  <a href="${item.url}" >${item.name}<svg>
+    <use src="../../images/icons#icon-Amazon_logo.svg"></use>
+</svg></a>
+</div>`;
+      return newSocialMarkup;
+    })
+    .join('');
   const markup = `<div class="data-book">
 <img src="${book_image}" alt="${list_name}">
 <div class="data-book__info">
@@ -18,6 +30,7 @@ function createMarkupBooks(category) {
 <button type="button" class="button-js-storage" data-favoriteid='${_id}'>Add to shopping list</button>
 `;
   modalWindow.insertAdjacentHTML('beforeend', markup);
+  modalWindow.insertAdjacentHTML('beforeend', socialMarkup);
 }
 
 let localData = getStorageItem(STORAGE_KEY);
@@ -83,9 +96,3 @@ async function onClickBookCard(event) {
     Notify.failure(error.message);
   }
 }
-
-// <div class="book-shops-links">
-//   <a href="${url}" ><img src="../../images/save to Ukraine/image 1.png" alt="${name}"></a>
-//    <a href=""><img src="" alt=""></a>
-//    <a href=""><img src="" alt=""></a>
-// </div>`;
