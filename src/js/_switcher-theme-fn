@@ -3,9 +3,9 @@ const body = document.querySelector('body');
 
 checkbox.addEventListener("click", onSwitcherClick);
 
-function onSwitcherClick() {
+export function onSwitcherClick() {
 
-  if(this.checked) {
+  if (this.checked) {
 
     const css = 'body {background-color: #202024; color: white;}';
     const element = document.createElement('style');
