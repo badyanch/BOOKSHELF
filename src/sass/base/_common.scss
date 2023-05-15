@@ -5,6 +5,9 @@ body {
   color: var(--primary-dark);
   background-color: var(--bg-light);
 }
+.body-lock {
+  overflow: hidden;
+}
 
 .section-categories-suppot-thumb{
   display: flex;
