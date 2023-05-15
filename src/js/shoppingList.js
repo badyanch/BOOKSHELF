@@ -1,5 +1,7 @@
 // Get the shopping list container element
-const shoppingListContainer = document.querySelector('.shopping-list__container');
+const shoppingListContainer = document.querySelector(
+  '.shopping-list__container'
+);
 
 // Check if shoppingList exists in localStorage
 if (localStorage.getItem('shoppingList')) {
@@ -10,7 +12,15 @@ if (localStorage.getItem('shoppingList')) {
   const shoplistBooks = shoppingList.map(makeShoplistMarkup);
 
   // Create markup for a single book
-  function makeShoplistMarkup({ bookImg, author, listName, description, title, buyLinks, id }) {
+  function makeShoplistMarkup({
+    bookImg,
+    author,
+    listName,
+    description,
+    title,
+    buyLinks,
+    id,
+  }) {
     const shoplistBookContainer = document.createElement('div');
     shoplistBookContainer.classList.add('shoplist-book-container');
     shoplistBookContainer.dataset.id = id;
@@ -71,7 +81,9 @@ if (localStorage.getItem('shoppingList')) {
     if (shoppingList.length === 0) {
       newShoppingListContainer.replaceWith(shoppingListContainer);
     } else {
-      const bookContainerToRemove = newShoppingListContainer.querySelector(`[data-id="${id}"]`);
+      const bookContainerToRemove = newShoppingListContainer.querySelector(
+        `[data-id="${id}"]`
+      );
       bookContainerToRemove.remove();
     }
   }
