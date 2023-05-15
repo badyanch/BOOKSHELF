@@ -9,8 +9,8 @@
   padding-top: 17px;
   padding-bottom: 17px;
 
-  background-color: var(--secondary-bg);
-  border: 1.5px solid var(--primary-color);
+  background-color: var(--primary-light);
+  border: 1.5px solid var(--primary-dark);
   border-radius: 0px 0px 8px 8px;
 }
 
@@ -404,8 +404,8 @@ html.dark .switcher-theme__status {
 .sign-up-btn {
   display: flex;
   justify-content: space-between;
-  max-width: 184px;
-  width: 100%;
+ min-width: 184px;
+
 
   color: var(--default-primary-color);
 
@@ -430,7 +430,7 @@ html.dark .switcher-theme__status {
   line-height: 1.29;
   letter-spacing: -0.04em;
 
-  border: 1.5px solid var(--default-secondary-color);
+  border: 1.5px solid var(--logo-dark);
   border-radius: 18px;
 
   cursor: pointer;

@@ -31,6 +31,7 @@ async function checkUserLogIn() {
 			const userProfile = await user.getInfoUserFromDb(auth.currentUser.email);
 			refEl.openFormBtn.textContent = userProfile.userName
 			IS_USER_LOG = true
+			refEl.openFormBtn.addEventListener('click', logoutUser)
 			return
 		} else {
 			console.log('Пользователь не аутентифицирован');
