@@ -13,6 +13,8 @@
 
 @import "./base/shopingListPage/ShoppingList";
 
+@import "./base/main-page/loader";
+
 
 // components
 @import "./components/all-categories";
@@ -21,7 +23,6 @@
 @import "./components/authorization";
 @import "./components/single-book-card";
 @import "./components/single-book-popup";
-@import "./components/single-category";
 @import "./components/support";
 @import "./components/best-sellers";
 @import "./components/shopping-list";

@@ -12,11 +12,16 @@ export const refEl = {
 
 	checkAuth: document.querySelector('.check__auth'),
 	openFormBtn: document.querySelector('.sign-up-btn__page-header'),
+	userProfileBtn: document.querySelector('.auth-user'),
 
 	backdrop: document.querySelector('.backdrop'),
 	closeBtns: document.querySelectorAll('.form__close'),
 	signOutbtn: document.querySelector('.sign__out'),
+	pageHeader: document.querySelector('.page-header__container'),
+	
 }
+
+console.dir(refEl.userProfileBtn)
 const user = new User()
 // user.signOut()
 let IS_FORM_OPEN = false;
@@ -29,12 +34,15 @@ async function checkUserLogIn() {
 		if (result) {
 			console.log('Пользователь аутентифицирован');
 			const userProfile = await user.getInfoUserFromDb(auth.currentUser.email);
-			refEl.openFormBtn.textContent = userProfile.userName
+			refEl.userProfileBtn.textContent = userProfile.userName
+			refEl.openFormBtn.style.display = 'none';
 			IS_USER_LOG = true
+			refEl.pageHeader.classList.add('is-logged');
 			return
 		} else {
 			console.log('Пользователь не аутентифицирован');
 			refEl.openFormBtn.addEventListener('click', openForm)
+			refEl.userProfileBtn.style.display = 'none';
 			IS_USER_LOG = false
 			return
 		}

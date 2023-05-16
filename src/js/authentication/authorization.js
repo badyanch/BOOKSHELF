@@ -90,7 +90,7 @@ export class User {
 			await this.getInfoUserFromDb(userEmail)
 			Notify.success(`Good job ${userName.trim()}! Your account is created!`);
 			refEl.formSignUp.reset()
-			await this.signIn()
+			await this.signIn(userEmail,userPassword)
 		} catch (error) {
 			console.error(error.message);
 			Notify.failure(error.code);
@@ -101,7 +101,7 @@ export class User {
 	async signIn(userEmail, userPassword) {
 		try {
 			Loading.hourglass()
-			await signInWithEmailAndPassword(auth, userEmail.trim(), userPassword.trim());
+			await signInWithEmailAndPassword(auth, userEmail, userPassword);
 			Notify.success('You logged successfully');
 			refEl.formSignIn.reset()
 			location.reload();
