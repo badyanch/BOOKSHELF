@@ -40,6 +40,16 @@
 	--switcher-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 	--switcher-status-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1),
 		0px 2px 2px rgba(0, 0, 0, 0.1), 1px 2px 4px rgba(0, 0, 0, 0.1);
+		
+		--secondary-light: #e0e0e0;
+
+		--primary-akzent: #4f2ee8;
+		--secondary-akzent: #eac645;
+	  
+		--default-primary-color: #ffffff;
+		--default-secondary-color: #111111;
+	  
+		--user-bg: #f6f6f6;
 }
 
 // ---------------------BREAKPOINTS---------------------
@@ -68,3 +78,5 @@ $secondary-text-color-darkt: rgba(255, 255, 255, 0.6);
 $logo-color-darkt: #F3F3F3;
 $button-pagination-color-darkt: #FFFFFF;
 $tertiary-text-color-darkt: #B4AFAF;
+
+

@@ -286,7 +286,7 @@ html.dark .switcher-theme__status {
 }
 
 .user__icon {
-  fill: var(--default-primary-color);
+  fill: var(--primary-dark);
 
   transform: rotate(0);
   transition: transform var(--time) var(--cubic);
@@ -366,7 +366,7 @@ html.dark .switcher-theme__status {
   @media screen and (min-width: $tablet) {
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 35%;
 
     width: 100%;
     height: 80px;
@@ -382,7 +382,7 @@ html.dark .switcher-theme__status {
 
   color: var(--logo-dark);
 
-  background-color: var(--logo-light);
+  background-color: var(--primary-light);
 
   @media screen and (min-width: $tablet) {
     width: 100%;
@@ -484,6 +484,8 @@ html.dark .switcher-theme__status {
 }
 
 .text-name-user {
+  width: 184px;
+  height: 45px;
   letter-spacing: -.02em;
     color: var(--primary-light);
     font-size: 22px;
