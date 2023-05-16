@@ -12,27 +12,27 @@ z-index: 10;
 
 padding-left: 20px;
 padding-right: 20px;
-transition: opacity ;
+transition: opacity;
+
+  @media screen and (min-width: 768px) {
+      padding-left: 95px;
+      padding-right: 95px;
+    }
+  
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
 
 }
-
-// .book-backdrop.is-hidden {
-//   display: none;
-//   opacity: 0;
-// }
-
-.book-backdrop.is-hidden .book-modal {
-  transform: translate(-50%, -50%) scale(0.8);
-}
-
-
 
 .book-modal {
   position: absolute;
-  top: 50%;
+  top: 400px;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 335px;
+  max-width: 335px;
+  height: auto;
   width: calc(100% - 30px);
   min-height: 762px;
   border: 2px solid var(--primary-dark);
@@ -40,177 +40,286 @@ transition: opacity ;
   background-color: var(--primary-light);
   border-radius: 18px;
   padding: 40px 24px;
-  z-index: 10000;
+  //z-index: 10000;
     pointer-events: none;
 
         @media screen and (min-width: 768px) {
-            top: 50%;
+            //top: 275px;
+            left: 50%;
             transform: translate(-50%, -50%);
             max-width: 579px;
-            min-height: 465px;
+            //height: 501px;
+            padding: 40px;
           }
 
 }
 
 
+.book-info {
+  @media screen and (min-width: 768px) {
+      display: flex;
+      gap: 24px;
+    }
+}
 
-.book-modal.active {
-  pointer-events: auto;
+.book__box {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .modal-close {
 
 position: absolute;
-right: 18px;
-  top: 18px;
-  border: rgba(0, 0, 0, 0);
-  background: var(--primary-light);
+right: 12px;
+  top: 12px;
 
-  @media screen and (min-width: 768px) {
-right: 31px;
-  top: 31px;
-    }
+  border: none;
+  background-color: var(--primary-light);
+  cursor: pointer;
+  padding: 0;
+
 }
 
 .modal-close-icon{
-width: 12px;
-height: 12px;
-
-&:focus &:hover {
-  cursor: pointer;
-  color: #4F2EE8;
-  transition: 250ms color;
-}
-
-@media screen and (min-width: 768px) {
-width: 28px;
-  height: 28px;
-  }
-
+stroke: var(--primary-dark);
+fill: var(--primary-dark);
+transition: stroke var(--time) var(--cubic), fill var(--time) var(--cubic);
+&:focus, &:hover {
+  stroke: var(--primary-akzent);
+  fill: var(--primary-akzent);
+  //cursor: pointer;
 
 }
+}
 
-.book-image {
+.thumb {
   width: 287px;
-    height: 408px;
-    object-fit: cover;
-        display: flex;
-          justify-content: center;
-          align-items: center;
-   // background: url(image.png);
-      border-radius: 8px;
-//margin-top: 10px;
-//margin-left: 24px;
-//margin-right: 24px;
-margin-bottom: 14px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 14px;
 
-@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     width: 192px;
-      height: 281px;
-      margin-left: 40px;
+    margin-bottom: 40px;
   }
-
 }
 
-.data-book__title {
-  font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
-  
-  
-    letter-spacing: -0.04em;
-  
-    color: var(--primary-dark);
-    margin-bottom: 4px;
+.image {
+  width: 100%;
+  object-fit: cover;
 }
 
-.data-book__subtitle {
-font-family: 'DM Sans';
-  font-style: italic;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  /* identical to box height, or 117% */
+.book__name {
+  margin-bottom: 4px;
+  color: var(--primary-dark);
 
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.125;
   letter-spacing: -0.04em;
 
-  color: #B4AFAF;
-
-  margin-top: 18px;
-
+  @media screen and (min-width: 768px) {
+    margin-bottom: 8px;
+  }
 
 }
+.book__author {
+  font-style: italic;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.04em;
 
-.data-book__description {
-  font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    /* or 129% */
-  
-    letter-spacing: -0.04em;
-  
-    color: #111111;
+  color: var(--text-secondary-light);
+  margin-bottom: 18px;
 
-    margin-top: 14px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+  }
 }
 
-.logo-shops-title {
+.book__description {
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+
+  color: var(--primary-dark);
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+    max-width: 280px;
+  }
+}
+
+.book-link-list {
   list-style: none;
   display: flex;
-  margin-bottom: 40px;
-  //padding: auto;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  padding-bottom: 40px;
 }
 
-.logo-shops-link {
-  display: inline-block;
-  margin-right: 20px;
+.book__sales-icon {
+  mix-blend-mode: luminosity;
 
-  &:not(:last-child) {
-      margin-right: 20px;
-    }
+  &:hover {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  }
+
+  html.dark &.amazon {
+    filter: invert(1);
+  }
 }
 
-.button-delete {
-  
-  box-sizing: border-box;
+.book-info-link {
+  text-decoration: none;
+}
 
-    display: flex;
-    //flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 28px;
-    gap: 10px;
-  
-   // position: absolute;
-    width: 211px;
+.button-book-more {
+
+  width: 211px;
     height: 46px;
-    left: 62px;
-    top: 676px;
-  
-    border: 2px solid #4F2EE8;
-    border-radius: 40px;
+  font-weight: 700;
+  line-height: 1.286;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
 
-    font-family: 'DM Sans';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 13px;
-      line-height: 18px;
-      /* identical to box height, or 129% */
-    
-      letter-spacing: -0.01em;
-      text-transform: uppercase;
-    
-      color: #111111;
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  padding: 14px 28px;
+  border: 2px solid var(--primary-akzent);
+  border-radius: 40px;
 
-          // &:hover &:focus
-          //  {
-          //     cursor: pointer;
-          //     background-color: #4F2EE8;
-          //     color: #ffffff;
-          //     transition: background-color 250ms color;
-          //   }
+  display: flex;
+  margin: auto;
+  margin-bottom: 8px;
+  transition: color var(--time) var(--cubic), background-color var(--time) var(--cubic);
+
+
+  &:hover,
+  &:focus {
+    color: var(--primary-light);
+    background-color: var(--primary-akzent);
+    cursor: pointer;
+  }
+ @media screen and (min-width: 768px) {
+    width: 499px;
+      height: 64px;
+ }
+
 }
+
+.greetings {
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: rgba(17, 17, 17, 0.5);
+  max-width: 240px;
+  margin: auto;
+}
+
+
+// .data-book__title {
+//   font-family: 'DM Sans';
+//     font-style: normal;
+//     font-weight: 700;
+//     font-size: 16px;
+//     line-height: 18px;
+  
+  
+//     letter-spacing: -0.04em;
+  
+//     color: var(--primary-dark);
+//     margin-bottom: 4px;
+// }
+
+// .data-book__subtitle {
+// font-family: 'DM Sans';
+//   font-style: italic;
+//   font-weight: 400;
+//   font-size: 12px;
+//   line-height: 14px;
+//   /* identical to box height, or 117% */
+
+//   letter-spacing: -0.04em;
+
+//   color: #B4AFAF;
+
+//   margin-top: 18px;
+
+
+// }
+
+// .data-book__description {
+//   font-family: 'DM Sans';
+//     font-style: normal;
+//     font-weight: 400;
+//     font-size: 14px;
+//     line-height: 18px;
+//     /* or 129% */
+  
+//     letter-spacing: -0.04em;
+  
+//     color: #111111;
+
+//     margin-top: 14px;
+// }
+
+// .logo-shops-title {
+//   list-style: none;
+//   display: flex;
+//   margin-bottom: 40px;
+//   //padding: auto;
+// }
+
+// .logo-shops-link {
+//   display: inline-block;
+//   margin-right: 20px;
+
+//   &:not(:last-child) {
+//       margin-right: 20px;
+//     }
+// }
+
+// .button-delete {
+  
+//   box-sizing: border-box;
+
+//     display: flex;
+//     //flex-direction: row;
+//     align-items: center;
+//     justify-content: center;
+//     padding: 14px 28px;
+//     gap: 10px;
+  
+//    // position: absolute;
+//     width: 211px;
+//     height: 46px;
+//     left: 62px;
+//     top: 676px;
+  
+//     border: 2px solid #4F2EE8;
+//     border-radius: 40px;
+
+//     font-family: 'DM Sans';
+//       font-style: normal;
+//       font-weight: 700;
+//       font-size: 13px;
+//       line-height: 18px;
+//       /* identical to box height, or 129% */
+    
+//       letter-spacing: -0.01em;
+//       text-transform: uppercase;
+    
+//       color: #111111;
+
+//           // &:hover &:focus
+//           //  {
+//           //     cursor: pointer;
+//           //     background-color: #4F2EE8;
+//           //     color: #ffffff;
+//           //     transition: background-color 250ms color;
+//           //   }
+// }
