@@ -8,7 +8,8 @@
         <use href="./images/icons.svg#icon-text-logo"></use>
       </svg>
     </a>
-    <nav class="page-nav">
+
+    <nav class="page-nav page-header__page-nav js-page-nav">
       <ul class="page-nav__list list">
         <li>
           <a class="page-nav__link" href="./index.html">Home</a>
@@ -19,39 +20,56 @@
             <svg class="page-nav__icon" width="20" height="20">
               <use href="./images/icons.svg#icon-shopping-list"></use>
             </svg>
+            <span class="page-nav__cart-number visually-hidden"></span>
           </a>
         </li>
       </ul>
     </nav>
+
     <label class="switcher-theme" aria-label="theme switcher">
       <input
         type="checkbox"
         class="switcher-theme__checkbox visually-hidden js-switcher-theme"
       />
+
       <span class="switcher-theme__status"></span>
     </label>
+
     <div class="page-header__user-container auth-component">
-      <button class="user js-user auth-user text-name-user" type="button">
-        User name
+      <button class="user js-user" type="button">
+        <span class="user__box">
+          <svg
+            class="user__avatar"
+            aria-label="user avatar"
+            width="19"
+            height="19"
+            fill="#4F2EE8"
+          >
+            <use href="./images/icons.svg#icon-user"></use>
+          </svg>
+        </span>
+
+        <span class="user__name auth-component__user-name">User name</span>
+
         <svg class="user__icon" width="23" height="26">
           <use href="./images/icons.svg#icon-triangle-down"></use>
         </svg>
       </button>
+
       <div class="page-header__btns-box">
-        <button class="header-btn signout log-out-btn user__log-out-btn" type="button">
+        <button class="header-btn log-out-btn user__log-out-btn" type="button">
           Log out
         </button>
       </div>
     </div>
+
     <button
-      class="header-btn sign-up-btn sign-up-btn__page-header"
+      class="header-btn sign-up-btn sign-up-btn__page-header js-open-form-modal"
       type="button"
     >
       Sign up
-      <svg class="user__icon" width="23" height="26">
-        <use href="./images/icons.svg#icon-arrow-right"></use>
-      </svg>
     </button>
+
     <div class="page-header__btn-container">
       <button
         class="menu-btn js-open-menu"
@@ -68,6 +86,7 @@
           <use href="./images/icons.svg#icon-align-left"></use>
         </svg>
       </button>
+
       <button
         class="menu-btn menu-btn--close js-close-menu menu-btn--hide"
         type="button"
@@ -84,6 +103,7 @@
     </div>
   </div>
 </header>
+
 <div class="menu-container js-menu-container" id="mobile-menu">
   <div class="container menu-container__container">
     <div class="user">
@@ -98,9 +118,11 @@
           <use href="./images/icons.svg#icon-user"></use>
         </svg>
       </div>
-      <p class="user__name">User name</p>
+
+      <p class="user__name user__name-mobile">User name</p>
     </div>
-    <nav class="page-nav menu-container__page-nav">
+
+    <nav class="page-nav menu-container__page-nav js-page-nav">
       <ul class="page-nav__list list">
         <li>
           <a class="page-nav__link" href="./index.html">Home</a>
@@ -115,13 +137,15 @@
         </li>
       </ul>
     </nav>
+
     <button
-      class="header-btn log-out-btn auth-component__sign-out-button"
+      class="header-btn log-out-btn auth-component__sign-out-button auth-component__sign-out-button-mobile"
       type="button"
     >
       Log out
     </button>
-    <button class="header-btn sign-up-btn js-open-form-modal" type="button">
+
+    <button class="header-btn sign-up-btn js-open-form-modal sign-up-btn-openModal" type="button">
       Sign up
     </button>
   </div>

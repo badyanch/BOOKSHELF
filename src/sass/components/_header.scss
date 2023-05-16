@@ -1,3 +1,5 @@
+// header------------------------------------------
+
 .page-header {
 	position: sticky;
 	z-index: 10;
@@ -7,9 +9,11 @@
 	padding-top: 17px;
 	padding-bottom: 17px;
 
-	background-color: var(--primary-light);
-	border: 1.5px solid var(--primary-dark);
-	border-radius: 0px 0px 8px 8px;
+
+  background-color: var(--primary-light);
+  border: 1.5px solid var(--logo-dark);
+  border-radius: 0px 0px 8px 8px;
+
 }
 
 .page-header__container {
@@ -148,10 +152,11 @@ html.dark .switcher-theme__status {
 }
 
 .menu-container {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 2;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
 
 	padding-top: 104px;
 	padding-bottom: 20px;
@@ -270,11 +275,13 @@ html.dark .switcher-theme__status {
 }
 
 .user__name {
-	font-weight: 700;
-	font-size: 22px;
-	line-height: 1.32;
-	letter-spacing: -0.02em;
-	color: var(--default-primary-color);
+
+  display: block;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.32;
+  letter-spacing: -0.02em;
+  color: var(--default-primary-color);
 
 	@media screen and (min-width: $tablet) {
 		margin-right: 4px;
@@ -282,7 +289,9 @@ html.dark .switcher-theme__status {
 }
 
 .user__icon {
-	fill: var(--primary-dark);
+
+  fill: var(--default-primary-color);
+
 
 	transform: rotate(0);
 	transition: transform var(--time) var(--cubic);
@@ -305,9 +314,9 @@ html.dark .switcher-theme__status {
 	}
 }
 
-// .page-header__page-nav {
-//   display: none;
-// }
+.page-header__page-nav {
+  display: none;
+}
 
 .page-nav__list {
 	display: flex;
@@ -324,34 +333,59 @@ html.dark .switcher-theme__status {
 }
 
 .page-nav__link {
-	display: inline-flex;
-	align-items: center;
-	gap: 4px;
-	padding: 8px 16px;
 
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 1.29;
-	letter-spacing: -0.04em;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: var(--default-primary-color);
-	border-radius: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  position: relative;
 
-	@media screen and (min-width: $tablet) {
-		color: var(--primary-color);
-	}
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--default-primary-color);
+  border-radius: 36px;
 
-	&--current {
-		font-weight: 700;
-		color: var(--default-secondary-color);
-		background-color: var(--secondary-akzent);
-		transform: translateX(16px);
+  transition: color var(--time) var(--cubic),
+    background-color var(--time) var(--cubic);
 
-		@media screen and (min-width: $tablet) {
-			transform: translateX(0);
-		}
-	}
+  .page-nav__cart-number {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 2px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--primary-akzent);
+    font-size: 8px;
+    color: #ffffff;
+  }
+
+  @media screen and (min-width: $tablet) {
+    color: var(--primary-color);
+  }
+
+  &--current {
+    font-weight: 700;
+    color: var(--default-secondary-color);
+    background-color: var(--secondary-akzent);
+    transform: translateX(16px);
+
+    @media screen and (min-width: $tablet) {
+      transform: translateX(0);
+    }
+  }
+
+  &:hover {
+    color: var(--default-primary-color);
+    background-color: var(--primary-akzent);
+  }
 }
 
 .page-nav__icon {
@@ -359,10 +393,11 @@ html.dark .switcher-theme__status {
 }
 
 .page-header__btns-box {
-	@media screen and (min-width: $tablet) {
-		position: absolute;
-		left: 0;
-		top: 35%;
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+    left: 0;
+    top: 50%;
+
 
 		width: 100%;
 		height: 110px;
@@ -376,9 +411,11 @@ html.dark .switcher-theme__status {
 	gap: 4px;
 	min-width: 118px;
 
-	color: var(--logo-dark);
 
-	background-color: var(--primary-light);
+  color: var(--default-secondary-color);
+
+  background-color: var(--default-primary-color);
+
 
 	@media screen and (min-width: $tablet) {
 		width: 100%;
@@ -396,11 +433,12 @@ html.dark .switcher-theme__status {
 }
 
 .sign-up-btn {
-	display: flex;
-	justify-content: space-between;
-	min-width: 184px;
 
-	color: var(--default-primary-color);
+  display: flex;
+  justify-content: space-between;
+  max-width: 184px;
+  width: 100%;
+
 
 	background-color: var(--primary-akzent);
 }
@@ -414,9 +452,19 @@ html.dark .switcher-theme__status {
 }
 
 .header-btn {
-	align-self: flex-start;
-	align-items: center;
-	padding: 14px 24px;
+
+  align-self: flex-start;
+  align-items: center;
+  padding: 14px 24px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+
+  border: 1.5px solid var(--default-secondary-color);
+  border-radius: 18px;
+
 
 	font-weight: 500;
 	font-size: 14px;
@@ -428,18 +476,13 @@ html.dark .switcher-theme__status {
 
 	cursor: pointer;
 
-	&::after {
-		content: "";
 
-		display: block;
-		width: 20px;
-		height: 20px;
+    background-image: url('../images/icon-arrow-btn.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
-		background-image: url("../images/icon-arrow-btn.svg");
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-	}
 }
 
 .is-logged .menu-container__page-nav {
@@ -457,39 +500,26 @@ html.dark .switcher-theme__status {
 }
 
 .is-logged .page-header__user-container {
-	@media screen and (min-width: $tablet) {
-		display: block;
-	}
+
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+  }
+
 }
 
-// .is-logged .sign-up-btn {
-//   display: none;
-// }
+.is-logged .sign-up-btn {
+  display: none;
+}
 
-// .is-logged .sign-up-btn__page-header {
-//   @media screen and (min-width: $tablet) {
-//     display: none;
-//   }
-// }
+.is-logged .sign-up-btn__page-header {
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
 
 .is-logged .log-out-btn {
 	display: inline-flex;
 }
 
-.text-name-user {
-	width: 184px;
-	height: 45px;
-	letter-spacing: -0.02em;
-	color: var(--primary-light);
-	font-size: 22px;
-	font-weight: 700;
-	line-height: 1.32;
-}
-
-// .page-header__page-nav{
-//   display: none;
-// }
-
-.is-logged .page-nav {
-	display: block;
-}
