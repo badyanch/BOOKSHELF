@@ -103,3 +103,4 @@ if (localStorage.getItem('shoppingList')) {
   }
 
 // Hide/show pagination container
+}
