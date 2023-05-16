@@ -15,21 +15,25 @@ export function onSwitcherClick() {
     document.querySelectorAll(".category__link").forEach(function(el) {
       el.style.color = "white";
     });
-    // document.querySelectorAll('.js-cat-link').forEach(function(el) {
-    //   el.style.color = '#EAC645';
-    // });
     
     
-    document.querySelector(".js-cat-link").style.color = "#EAC645";
+    
+    document.querySelector(".current-category").style.color = "#EAC645";
     // document.querySelector(".category__link").style.color = "white";
-    
-    
+    document.querySelector(".books-cards__title").style.color = "white";
+    // document.querySelector(".books-cards__title-accent")
+
   } else {
     const element = document.querySelector(".switcher-theme__status");
-    document.querySelector(".js-cat-link").style.color = null;
+    document.querySelector(".current-category").style.color = null;
+    
+    // document.querySelector(".current-category").classList.remove("dark-theme")
+
     document.querySelectorAll(".category__link").forEach(function(el) {
       el.style.color = null;
     });
+
+    document.querySelector(".books-cards__title").style.color = null;
     if (element) {
       element.remove()
     }  
