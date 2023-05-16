@@ -445,6 +445,8 @@ html.dark .switcher-theme__status {
     background-position: center;
     background-size: cover;
   }
+
+
 }
 
 .is-logged .menu-container__page-nav {
@@ -467,9 +469,9 @@ html.dark .switcher-theme__status {
   }
 }
 
-.is-logged .sign-up-btn {
-  display: none;
-}
+// .is-logged .sign-up-btn {
+//   display: none;
+// }
 
 // .is-logged .sign-up-btn__page-header {
 //   @media screen and (min-width: $tablet) {
