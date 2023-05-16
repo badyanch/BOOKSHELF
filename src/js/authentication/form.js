@@ -22,13 +22,10 @@ export const refEl = {
 	closeBtns: document.querySelectorAll('.form__close'),
 	signOutbtn: document.querySelector('.log-out-btn'),
 	pageHeader: document.querySelector('.page-header__container'),
-	
+
 }
 
-console.dir(refEl.openFormBtnMobile);
-console.dir(refEl.nameUser)
 const user = new User()
-// user.signOut()
 let IS_FORM_OPEN = false;
 let IS_USER_LOG = false;
 checkUserLogIn()
@@ -38,6 +35,7 @@ async function checkUserLogIn() {
 		const result = await user.isAuthenticated();
 		if (result) {
 			console.log('Пользователь аутентифицирован');
+			console.log(auth.currentUser.email);
 			const userProfile = await user.getInfoUserFromDb(auth.currentUser.email);
 			refEl.userProfileBtn.textContent = userProfile.userName
 			refEl.openFormBtn.style.display = 'none';
@@ -93,7 +91,7 @@ function closeForm() {
 //function is using on sign up form 
 function toSignIn(evt) {
 	if (evt.target === refEl.formChangerOnSignIn) {
-		console.log('toSignIn');
+
 
 		refEl.formSignIn.reset()
 
@@ -113,7 +111,7 @@ function toSignUp(evt) {
 
 	if (evt.target === refEl.formChangerOnSignUp) {
 		evt.currentTarget.reset()
-		console.log('toSignUp');
+
 		refEl.formSignIn.classList.toggle('active')//remove class
 		refEl.formSignUp.classList.toggle('active')//add class
 
@@ -127,7 +125,7 @@ function toSignUp(evt) {
 }
 async function onSubmitSignUp(evt) {
 	evt.preventDefault();
-	console.log('click');
+
 	const { elements: { userName, userEmail, userPassword } } = refEl.formSignUp;
 	user.signUp(userName.value, userEmail.value, userPassword.value)
 
@@ -140,6 +138,7 @@ async function onSubmitSignIn(evt) {
 
 	user.signIn(userEmail.value, userPassword.value)
 }
+
 
 
 refEl.signOutbtn.addEventListener('click', function() {
@@ -157,3 +156,4 @@ refEl.signOutbtn.addEventListener('click', function() {
 	    refEl.pageHeader.classList.remove('is-logged');
 	    Notify.success('You have been logged out.');
 	  });
+
