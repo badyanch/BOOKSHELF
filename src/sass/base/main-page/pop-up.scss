@@ -1,0 +1,42 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+
+  position: relative;
+  width: 335px;
+  height: 762px;
+  background: var(--primary-light);
+  border: 2px solid var(--primary-dark);
+  border-radius: 18px;
+}
+
+.data-book {
+  &__link {
+  }
+  &__info {
+  }
+  &__title {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: var(--primary-light);
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  &__subtitle {
+  }
+  &__description {
+  }
+}
+
+.book-shops-links {
+}
