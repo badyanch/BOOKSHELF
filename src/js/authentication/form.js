@@ -16,6 +16,8 @@ export const refEl = {
 	backdrop: document.querySelector('.backdrop'),
 	closeBtns: document.querySelectorAll('.form__close'),
 	signOutbtn: document.querySelector('.sign__out'),
+	pageHeader: document.querySelector('.page-header__user-container'),
+	
 }
 const user = new User()
 // user.signOut()
@@ -31,7 +33,7 @@ async function checkUserLogIn() {
 			const userProfile = await user.getInfoUserFromDb(auth.currentUser.email);
 			refEl.openFormBtn.textContent = userProfile.userName
 			IS_USER_LOG = true
-			refEl.openFormBtn.addEventListener('click', logoutUser)
+			refEl.pageHeader.classList.add('is-logged');
 			return
 		} else {
 			console.log('Пользователь не аутентифицирован');
