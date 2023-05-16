@@ -101,7 +101,7 @@ rootElement.addEventListener('click', showSingleBookPopUp);
 
 
 
-
+//код 2//
 
 
 // function createMarkupBooks(category) {
