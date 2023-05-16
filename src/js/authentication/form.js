@@ -16,7 +16,7 @@ export const refEl = {
 
 	backdrop: document.querySelector('.backdrop'),
 	closeBtns: document.querySelectorAll('.form__close'),
-	signOutbtn: document.querySelector('.sign__out'),
+	signOutbtn: document.querySelector('.log-out-btn'),
 	pageHeader: document.querySelector('.page-header__container'),
 	
 }
@@ -134,3 +134,10 @@ async function onSubmitSignIn(evt) {
 }
 
 
+refEl.signOutbtn.addEventListener('click', function() {
+	    user.signOut();
+	    // код, який потрібен після виходу користувача
+	    refEl.openFormBtn.textContent = 'Sign Up / Sign In';
+	    refEl.pageHeader.classList.remove('is-logged');
+	    Notify.success('You have been logged out.');
+	  });
