@@ -12,13 +12,16 @@ export const refEl = {
 
 	checkAuth: document.querySelector('.check__auth'),
 	openFormBtn: document.querySelector('.sign-up-btn__page-header'),
+	userProfileBtn: document.querySelector('.auth-user'),
 
 	backdrop: document.querySelector('.backdrop'),
 	closeBtns: document.querySelectorAll('.form__close'),
-	signOutbtn: document.querySelector('.sign__out'),
+	signOutbtn: document.querySelector('.log-out-btn'),
+	pageHeader: document.querySelector('.page-header__container'),
+
 }
+
 const user = new User()
-// user.signOut()
 let IS_FORM_OPEN = false;
 let IS_USER_LOG = false;
 checkUserLogIn()
@@ -28,13 +31,17 @@ async function checkUserLogIn() {
 		const result = await user.isAuthenticated();
 		if (result) {
 			console.log('Пользователь аутентифицирован');
+			console.log(auth.currentUser.email);
 			const userProfile = await user.getInfoUserFromDb(auth.currentUser.email);
-			refEl.openFormBtn.textContent = userProfile.userName
+			refEl.userProfileBtn.textContent = userProfile.userName
+			refEl.openFormBtn.style.display = 'none';
 			IS_USER_LOG = true
+			refEl.pageHeader.classList.add('is-logged');
 			return
 		} else {
 			console.log('Пользователь не аутентифицирован');
 			refEl.openFormBtn.addEventListener('click', openForm)
+			refEl.userProfileBtn.style.display = 'none';
 			IS_USER_LOG = false
 			return
 		}
@@ -77,7 +84,7 @@ function closeForm() {
 //function is using on sign up form 
 function toSignIn(evt) {
 	if (evt.target === refEl.formChangerOnSignIn) {
-		console.log('toSignIn');
+
 
 		refEl.formSignIn.reset()
 
@@ -97,7 +104,7 @@ function toSignUp(evt) {
 
 	if (evt.target === refEl.formChangerOnSignUp) {
 		evt.currentTarget.reset()
-		console.log('toSignUp');
+
 		refEl.formSignIn.classList.toggle('active')//remove class
 		refEl.formSignUp.classList.toggle('active')//add class
 
@@ -111,7 +118,7 @@ function toSignUp(evt) {
 }
 async function onSubmitSignUp(evt) {
 	evt.preventDefault();
-	console.log('click');
+
 	const { elements: { userName, userEmail, userPassword } } = refEl.formSignUp;
 	user.signUp(userName.value, userEmail.value, userPassword.value)
 
@@ -126,3 +133,10 @@ async function onSubmitSignIn(evt) {
 }
 
 
+refEl.signOutbtn.addEventListener('click', function () {
+	user.signOut();
+
+	refEl.openFormBtn.textContent = 'Sign Up / Sign In';
+	refEl.pageHeader.classList.remove('is-logged');
+	Notify.success('You have been logged out.');
+});

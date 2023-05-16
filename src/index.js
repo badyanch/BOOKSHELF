@@ -21,3 +21,5 @@ import './js/test/mobileMenu';
 import './js/scroll';
 
 import './js/header/index';
+
+import './js/switcher-theme-fn';
