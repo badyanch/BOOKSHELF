@@ -12,7 +12,11 @@ export const refEl = {
 
 	checkAuth: document.querySelector('.check__auth'),
 	openFormBtn: document.querySelector('.sign-up-btn__page-header'),
-	userProfileBtn: document.querySelector('.auth-user'),
+	userProfileBtn: document.querySelector('.auth-component__user-name'),
+	openFormBtnMobile: document.querySelector('.sign-up-btn-openModal'),
+	navHeaderMobile: document.querySelector('.menu-container__page-nav'),
+	nameUser: document.querySelector('.user__name-mobile'),
+	singOutMobile: document.querySelector('.auth-component__sign-out-button-mobile'),
 
 	backdrop: document.querySelector('.backdrop'),
 	closeBtns: document.querySelectorAll('.form__close'),
@@ -21,7 +25,8 @@ export const refEl = {
 	
 }
 
-console.dir(refEl.userProfileBtn)
+console.dir(refEl.openFormBtnMobile);
+console.dir(refEl.nameUser)
 const user = new User()
 // user.signOut()
 let IS_FORM_OPEN = false;
@@ -36,12 +41,15 @@ async function checkUserLogIn() {
 			const userProfile = await user.getInfoUserFromDb(auth.currentUser.email);
 			refEl.userProfileBtn.textContent = userProfile.userName
 			refEl.openFormBtn.style.display = 'none';
+			document.body.classList.add('is-logged');
+			refEl.nameUser.textContent = userProfile.userName
 			IS_USER_LOG = true
 			refEl.pageHeader.classList.add('is-logged');
 			return
 		} else {
 			console.log('Пользователь не аутентифицирован');
 			refEl.openFormBtn.addEventListener('click', openForm)
+			refEl.openFormBtnMobile.addEventListener('click', openForm)
 			refEl.userProfileBtn.style.display = 'none';
 			IS_USER_LOG = false
 			return
@@ -135,6 +143,14 @@ async function onSubmitSignIn(evt) {
 
 
 refEl.signOutbtn.addEventListener('click', function() {
+	    user.signOut();
+	    // код, який потрібен після виходу користувача
+	    refEl.openFormBtn.textContent = 'Sign Up / Sign In';
+	    refEl.pageHeader.classList.remove('is-logged');
+	    Notify.success('You have been logged out.');
+	  });
+
+	  refEl.singOutMobile.addEventListener('click', function() {
 	    user.signOut();
 	    // код, який потрібен після виходу користувача
 	    refEl.openFormBtn.textContent = 'Sign Up / Sign In';
