@@ -16,7 +16,7 @@ export const refEl = {
 	backdrop: document.querySelector('.backdrop'),
 	closeBtns: document.querySelectorAll('.form__close'),
 	signOutbtn: document.querySelector('.sign__out'),
-	pageHeader: document.querySelector('.page-header__user-container'),
+	pageHeader: document.querySelector('.page-header__container'),
 	
 }
 const user = new User()
