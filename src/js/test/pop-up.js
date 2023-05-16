@@ -1,12 +1,12 @@
 import { fetchBooksForID } from '../API';
 
 const imageAmazon = new URL(
-  '../../images/shoppinglist/amazon-b-w.png',
+  '../../images/shoppinglist/amazon-62-19-b-w.png',
   import.meta.url
 );
 
 const imageAppleBook = new URL(
-  '../../images/shoppinglist/ibook-b-w.png',
+  '../../images/shoppinglist/ibook-33-32-b-w.png',
   import.meta.url
 );
 
