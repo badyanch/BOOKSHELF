@@ -1,35 +1,37 @@
-const KEY_LS_THEME = 'site-theme';
+// const KEY_LS_THEME = 'site-theme';
 
-const Theme = {
-  LIGHT: 'light',
-  DARK: 'dark',
-};
+// const Theme = {
+//   LIGHT: 'light',
+//   DARK: 'dark',
+// };
 
-const switcherCheckboxEl = document.querySelector('.js-switcher-theme');
-const htmlEl = document.querySelector('html');
+// const switcherCheckboxEl = document.querySelector('.js-switcher-theme');
+// const htmlEl = document.querySelector('html');
 
-switcherCheckboxEl.addEventListener('click', () => {
-  const isLight = htmlEl.classList.contains('light');
+// switcherCheckboxEl.addEventListener('click', () => {
+//   const isLight = htmlEl.classList.contains('light');
 
-  const theme = isLight ? Theme.DARK : Theme.LIGHT;
+//   const theme = isLight ? Theme.DARK : Theme.LIGHT;
 
-  onChangeTheme(theme);
-});
+//   onChangeTheme(theme);
+// });
 
-function onChangeTheme(theme) {
-  const isLight = htmlEl.classList.contains('light');
+// function onChangeTheme(theme) {
+//   const isLight = htmlEl.classList.contains('light');
 
-  if (isLight && theme !== Theme.LIGHT) {
-    localStorage.setItem(KEY_LS_THEME, JSON.stringify(Theme.DARK));
+//   if (isLight && theme !== Theme.LIGHT) {
+//     localStorage.setItem(KEY_LS_THEME, JSON.stringify(Theme.DARK));
 
-    htmlEl.classList.replace('light', 'dark');
+//     htmlEl.classList.replace('light', 'dark');
 
-    return;
-  }
+//     return;
+//   }
 
-  if (theme !== Theme.DARK) {
-    localStorage.setItem(KEY_LS_THEME, JSON.stringify(Theme.LIGHT));
+//   if (theme !== Theme.DARK) {
+//     localStorage.setItem(KEY_LS_THEME, JSON.stringify(Theme.LIGHT));
 
-    htmlEl.classList.replace('dark', 'light');
-  }
-}
+//     htmlEl.classList.replace('dark', 'light');
+//   }
+// }
+
+
