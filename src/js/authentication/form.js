@@ -29,6 +29,7 @@ const user = new User()
 let IS_FORM_OPEN = false;
 let IS_USER_LOG = false;
 checkUserLogIn()
+// user.signOut() 
 
 async function checkUserLogIn() {
 	try {

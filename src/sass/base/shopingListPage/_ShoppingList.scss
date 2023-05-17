@@ -1,6 +1,12 @@
 .shopping-list {
   margin-top: 40px;
   font-family: 'DM Sans';
+
+    @media screen and (min-width: 1440px) {
+        margin-top: 0;
+        width: 100%;
+      }
+
   &__container {
     margin-top: 40px;
   }
@@ -20,6 +26,7 @@
       line-height: 1.08;
       display: inline;
     }
+  
   }
 
   &__title-span {
@@ -260,4 +267,23 @@
     line-height: 1.17;
     letter-spacing: -0.04em;
   }
+}
+
+
+.shopping-page-flex-thumb{
+  // display: flex;
+  @media screen and (min-width: 1440px) {
+      display: flex;
+      margin-top: 40px;
+      gap: 40px;
+    }
+}
+
+.shoppin-list-hide-support{
+  display: none;
+
+  @media screen and (min-width: 1440px) {
+      display: block;
+      width: 356px;
+    }
 }
