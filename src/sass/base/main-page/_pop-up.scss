@@ -1,6 +1,6 @@
 .modal-close-book-btn {
 	position: absolute;
-	top: 5%;
+	top: 2%;
 	right: 3%;
 	background-color: inherit;
 	border: none;
@@ -9,19 +9,40 @@
 	&:hover {
 		fill: var(--primary-akzent);
 		transition: fill 250ms var(--cubic-b);
+
+		
 	}
+	@media screen and (min-width: $tablet) {
+		top: 5%;
+
+	 }
 }
 
 .data-book {
 	&__img {
-		width: 192px;
-		height: 294px;
+		width: 287px;
+		height: 408px;
+		margin: 0 auto;
 		object-fit: cover;
+		margin-bottom: 14px;
+
+		@media screen and (min-width: 768px) {
+			width: 192px;
+			height: 294px;
+			object-fit: cover;
+		 }
 	}
 
 	&__info {
-		display: flex;
+
+
+		
 		margin-bottom: 40px;
+		
+		@media screen and (min-width: 768px) {
+			display: flex;
+		margin-bottom: 40px;
+		 }
 	}
 
 	&__title {
@@ -75,18 +96,23 @@
 	&__thumb {
 		display: flex;
 		flex-direction: column;
+		padding-left: 0px;
+
+	
+		@media screen and (min-width: 768px) {
 		padding-left: 24px;
 	}
-
+	}
 	&__btn-thumb {
 		display: flex;
 		flex-direction: column;
 	}
 
 	&__shop {
+		
 		font-family: "DM Sans";
 		color: var(--primary-dark);
-		width: 499px;
+		width: 280px;
 		margin-left: auto;
 		margin-right: auto;
 		background-color: inherit;
@@ -99,7 +125,15 @@
 		border: 2px solid var(--primary-akzent);
 		border-radius: 40px;
 		cursor: pointer;
+		
+		@media screen and (min-width: $tablet) {
+			width: 499px;
 
+		 }
+		 @media screen and (min-width: $desktop) {
+			width: 499px;
+
+		 }
 		&:hover,
 		&:focus {
 			background-color: var(--primary-akzent);
@@ -128,9 +162,9 @@
 	position: absolute;
 	padding: 40px;
 	width: 100%;
-	top: 50%;
+	top: 54%;
 	left: 50%;
-	max-width: 579px;
+	max-width:375px;
 
 	background: #ffffff;
 	border: 2px solid #111111;
@@ -139,6 +173,12 @@
 
 	transform: translate(-50%, -50%);
 	transition: transform 500ms var(--cubic-b);
+	@media screen and (min-width: $tablet) {
+		max-width: 579px;
+		top: 50%;
+
+	 }
+	
 }
 
 .social-shop-thumb {
