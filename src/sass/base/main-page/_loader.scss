@@ -26,10 +26,11 @@ $delay : calc($duration/6);
     }
 
           @media screen and (min-width: 1440px) {
-              position: absolute;
-              bottom: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%) scale(1.5);
+              position: fixed;
+              bottom: 20px;
+              right: 15vw;
+              transform: translate(-50%, -50%) scale(1);
+            //   overflow: hidden;
           }
 
 }
