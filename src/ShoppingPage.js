@@ -8,7 +8,7 @@ import './js/authentication/header';
 import './js/shoppingList';
 
 import './js/test/mobileMenu';
-
+import './js/test/swiper-supportUkraine';
 
 import './js/header/index';
 
