@@ -50,6 +50,31 @@
 .data-book__title {
     color: var(--primary-light);
 }
+// modal login window
+
+.form{
+    background-color: var(--bg-dark);
+    color: var(--bg-light);
+}
+.form__email{
+    background-color: var(--bg-dark);
+    border-color: var(--bg-light);
+    color: var(--bg-light);
+}
+.input__mail{
+    fill: var(--bg-light);
+}
+.form__submit{
+    background-color: var(--bg-light);
+    color: var(--bg-dark);
+}
+.form__sign-in{
+    color: var(--test-secondary-text-color-darkt);
+}
+
+.form__close{
+    fill: var(--bg-light);
+}
 }
 
 
