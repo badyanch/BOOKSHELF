@@ -10,7 +10,7 @@ function getNumberFromStorageNDraw() {
     listLength = parsedBooks.length;
     const basketThubm = document.querySelector('.page-nav__cart-number');
     console.log(basketThubm);
-    // const markup = `<div class="header-wishlist-counter-thumb">${listLength}</div>`;
+    const markup = `<div class="header-wishlist-counter-thumb">${listLength}</div>`;
     basketThubm.classList.remove('.visually-hidden');
     basketThubm.textContent = listLength;
     basketThubm.insertAdjacentHTML('beforeend', markup);
