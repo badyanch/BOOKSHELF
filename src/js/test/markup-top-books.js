@@ -87,7 +87,7 @@ function createCategoriesTopBooksMarkup(categories) {
 async function onClickSeeMore(evt) {
 	evt.preventDefault();
 	if (!evt.target.classList.contains('top-books__button')) {
-		console.log('Ти натиснув не на кнопку.');
+		// console.log('Ти натиснув не на кнопку.');
 		return;
 	}
 	console.log('Ти натиснув на кнопку.');
