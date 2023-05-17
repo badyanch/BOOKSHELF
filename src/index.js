@@ -1,6 +1,5 @@
 import './js/API';
 import './js/authentication/form';
-import './js/authentication/header';
 
 // import './js/handlers/bookCategory';
 // import './js/handlers/markup-category-list';
