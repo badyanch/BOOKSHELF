@@ -1,6 +1,6 @@
 import './js/API';
 import './js/authentication/form';
-import './js/authentication/header';
+
 
 // import './js/handlers/bookCategory';
 // import './js/handlers/markup-category-list';
@@ -13,3 +13,5 @@ import './js/test/swiper-supportUkraine';
 import './js/header/index';
 
 import './js/switcher-theme-fn';
+
+import './js/test/shoppData'

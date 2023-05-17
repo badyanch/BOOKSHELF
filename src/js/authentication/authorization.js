@@ -43,7 +43,7 @@ export class User {
 
 			const user = { ...userData, id: userId };
 			this.currentUser = user;
-			const currentUserData = { id: user.id, wishList: user.wishList };
+			const currentUserData = { id: user.id, wishList: user.userWishList };
 			localStorage.setItem('currentUser', JSON.stringify(currentUserData));
 
 			return user;
@@ -142,7 +142,7 @@ export class User {
 			Notify.success(`Good job ${userName.trim()}! Your account is created!`);
 			refEl.formSignUp.reset();
 
-			const currentUserData = { id: this.currentUser.id, wishList: [] };
+			const currentUserData = { id: this.currentUser.id, wishList: this.currentUser.userWishList };
 			localStorage.setItem('currentUser', JSON.stringify(currentUserData));
 
 			await this.signIn(userEmail, userPassword);
