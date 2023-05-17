@@ -2,7 +2,7 @@
 
 
 function getNumberFromStorageNDraw() {
-    const savedBook = localStorage.getItem('card-info') || '';
+    const savedBook = localStorage.getItem('') || '';
     if (savedBook === '') {
         return console.log('There is no books in storage');
     }
