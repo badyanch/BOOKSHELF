@@ -65,7 +65,6 @@ function createTopBooksMarkup(categoriesTopBooks) {
 }
 
 function createCategoriesTopBooksMarkup(categories) {
-
 	const markup = categories
 		.map(
 			({ list_name }) => `
@@ -99,7 +98,7 @@ async function onClickSeeMore(evt) {
 	refs.booksCardsTitle = document.querySelector('.books-cards__title');
 	refs.booksCardsTitle.remove();
 	addHeading(category);
-	refs.booksCardsList.innerHTML = '';
+	// refs.booksCardsList.innerHTML = '';
 	const categoryItem = await fetchCategoryList(category); // category fetch querry
 	createMarkupBooks(categoryItem);
 }
