@@ -1,0 +1,60 @@
+
+.dark-theme{
+    background-color: var(--bg-dark);
+    color: var(--primary-light);
+
+    .page-header{
+        background-color:var(--default-secondary-color);
+        border-color: var(--default-primary-color);
+    }
+    .logo__icon{
+        fill: var(--logo-light);
+    }
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-text-color);
+            border-radius: 12px;
+        }
+
+    .top-books__button {
+        background-color: var(--bg-dark);
+        color: var(--primary-light);
+    }
+
+    .category-books__img {
+        z-index: 1;
+    }
+    .card-overlay {
+        z-index: 2;
+    }
+    // shopping list
+        .shopping-list__title {
+            color: var(--primary-light);
+        }
+        .shopping-list__empty-text {
+            color: var(--test-secondary-text-color-darkt);  
+        }
+ // modal window  
+    .book-modal {
+    background-color: var(--bg-dark);
+    border-color: var(--bg-light);
+}
+.data-book__shop {
+    color: var(--primary-light);
+}
+.button__close{
+    fill: var(--primary-light);
+}
+.data-book__description {
+    color: var(--primary-light);
+}
+.data-book__title {
+    color: var(--primary-light);
+}
+}
+
+
+.light-theme {
+    color: var(--primary-dark);
+    background-color: var(--bg-light);
+}
+

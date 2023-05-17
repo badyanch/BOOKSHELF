@@ -1,23 +1,36 @@
-const checkbox = document.querySelector(".switcher-theme__checkbox");
+// const checkbox = document.querySelector(".switcher-theme__checkbox");
 
-checkbox.addEventListener("click", onSwitcherClick);
+// checkbox.addEventListener("click", onSwitcherClick);
 
-export function onSwitcherClick() {
+// export function onSwitcherClick() {
 
-  if (this.checked) {
+//   if (this.checked) {
 
-    const css = "body {background-color: #202024; color: white;}";
-    const element = document.createElement("style");
-    element.setAttribute("type", "text/css");
-    element.appendChild(document.createTextNode(css));
-    element.classList.add("style-class");
-    document.head.appendChild(element);
+//     const css = "body {background-color: #202024; color: white;}";
+//     const element = document.createElement("style");
+//     element.setAttribute("type", "text/css");
+//     element.appendChild(document.createTextNode(css));
+//     element.classList.add("style-class");
+//     document.head.appendChild(element);
     
-  } else {
-    const element = document.querySelector(".style-class");
+//   } else {
+//     const element = document.querySelector(".style-class");
     
-    if (element) {
-      element.remove()
-    }  
-  }
-}
+//     if (element) {
+//       element.remove()
+//     }  
+//   }
+// }
+
+
+const checkbox = document.getElementById("checkbox")
+const checkboxLabel = document.querySelector('.checkbox-label')
+
+
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark-theme")
+  checkboxLabel.classList.toggle('checkbox-label--dark-theme');
+})
+
+
+
