@@ -1,6 +1,8 @@
 .shopping-list {
   margin-top: 40px;
   font-family: 'DM Sans';
+  display: flex;
+  justify-content: center;
   &__container {
     margin-top: 40px;
   }
@@ -66,6 +68,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-items: center;
+  @media screen and (min-width: 768px){
+    flex-direction: column;
+    align-items: center;
+    margin-top: 140px;
+    display: flex;}
+
+  @media screen and (min-width: 1440px){
+    margin-top: 140px;
+    margin-left: 315px;}
 }
 
 .shopping-list__empty-text {
@@ -148,8 +160,6 @@
 }
 
 .shoplist-book-container {
-  width: 996px;
-  height: 213px;
   position: relative;
   margin-bottom: 20px;
   display: flex;
@@ -164,13 +174,12 @@
     display: flex;
     width: 704px;
     height: 213px;
-    border: 2px solid rgba(79, 46, 232, 0.4);
     border-radius: 16px;
   }
   @media screen and (min-width: 1440px) {
     width: 996px;
     height: 213px;
-  }
+  }   
 }
 
 .shoplist-book-img {
@@ -261,3 +270,29 @@
     letter-spacing: -0.04em;
   }
 }
+
+.container_shoppingList{
+  @media screen and (min-width: 1440px) {
+    display: flex;
+  }
+}
+
+.shopList_support{
+  display: none;
+  @media screen and (min-width: 1440px) {
+    display: block;
+    bottom: 24;
+    right: 56;
+    margin-left: 24px;
+    margin-top: 40px;
+  }
+}
+
+.shopList_container{
+  margin: auto auto;
+  @media screen and (min-width: 1440px) {
+    margin-left: 40px;
+  } 
+
+}
+

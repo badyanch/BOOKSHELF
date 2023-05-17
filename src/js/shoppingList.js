@@ -89,5 +89,5 @@ if (localStorage.getItem('shoppingList')) {
   function updateBookOnStorage() {
     localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
   }
-
+}
 // Hide/show pagination container
