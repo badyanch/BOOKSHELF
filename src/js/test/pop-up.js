@@ -22,19 +22,8 @@ function createMarkupBooks(category) {
   const { _id, list_name, book_image, title, author, buy_links, description } =
     category;
 
-  const socialMarkup = buy_links
-    .map((item, idx) => {
-      const newSocialMarkup = `<ul class="book-shops-links"><li><a href="${item.url}" ><img src='${linkAmazonImg}' alt='${item.name}'/>
-      <li><a href="${item.url}" ><img src='${linkAppleImg}' alt='${item.name}'/></li><li><a href="${item.url}" ><img src='${linkBookShopImg}' alt='${item.name}'/></li></li>
-  </a>
-</ul>`;
-      return newSocialMarkup;
-    })
-    .join('');
   const markup = `<div class="data-book">
 <div class="data-book__info">
-
-
 <img src="${book_image}" alt="${list_name}" class="data-book__img">
 <div class="data-book__thumb"><h2 class="data-book__title">${title}</h2>
 <h3 class="data-book__subtitle">${author}</h3>
@@ -43,20 +32,25 @@ function createMarkupBooks(category) {
   }
 </p></div>
 </div>
-<button type="button" class="button-js-storage data-book__shop" data-favoriteid='${_id}'>Add to shopping list</button></div>
+<button type="button" class="button-js-storage data-book__shop" data-favoriteid='${_id}'>Add to shopping list</button>
 <p class="data-book__success">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
 `;
   modalWindow.insertAdjacentHTML('beforeend', markup);
+
   const socialLinks = document.querySelector('.data-book__thumb');
-  console.log(socialLinks);
-  socialLinks.insertAdjacentHTML('beforeend', testFunc(buy_links));
+
+  const socialThumb = document.createElement('div');
+  socialThumb.classList.add('social-shop-thumb');
+  socialLinks.append(socialThumb);
+
+  socialThumb.insertAdjacentHTML('beforeend', testFunc(buy_links));
 }
 
 function testFunc(array) {
   let markup = '';
   const linkArr = [linkAmazonImg, linkAppleImg, linkBookShopImg];
   for (let index = 0; index < 3; index++) {
-    markup += `<a href="${array[index].url}"><img src='${linkArr[index]}' alt='${array[index].name}'/>
+    markup += `<a target="_blank" href="${array[index].url}"><img class="social-img" src='${linkArr[index]}' alt='${array[index].name}'/>
       `;
   }
 
@@ -91,12 +85,14 @@ async function onClickBookCard(event) {
     modalOpenMenu();
 
     createMarkupBooks(fetchAPI.data);
+    const discriptionText = document.querySelector('.data-book__success');
 
     const saveBookInStorageButton =
       document.querySelector('.button-js-storage');
 
     if (secondArray.includes(saveBookInStorageButton.dataset.favoriteid)) {
       saveBookInStorageButton.textContent = 'remove from the shopping list';
+      discriptionText.style.display = 'block';
     }
 
     saveBookInStorageButton.addEventListener('click', () => {
@@ -110,8 +106,7 @@ async function onClickBookCard(event) {
         secondArray.push(saveBookInStorageButton.dataset.favoriteid);
         saveInStorage(STORAGE_KEY, secondArray);
         saveBookInStorageButton.textContent = 'remove from the shopping list';
-
-        const discriptionText = document.querySelector('.data-book__success');
+        discriptionText.style.display = 'block';
       } else if (
         saveBookInStorageButton.textContent === 'remove from the shopping list'
       ) {
@@ -122,6 +117,7 @@ async function onClickBookCard(event) {
 
         saveInStorage(STORAGE_KEY, secondArray);
         saveBookInStorageButton.textContent = 'Add to shopping list';
+        discriptionText.style.display = 'none';
         return;
       }
     });
@@ -132,19 +128,19 @@ async function onClickBookCard(event) {
 
 const modalOpen = document.querySelector('[data-book-modal-open]');
 const modalForBook = document.querySelector('.book-modal');
-const modalBtnClose = document.querySelector('.modal-close');
+const modalBtnClose = document.querySelector('.modal-close-book-btn');
 
 modalBtnClose.addEventListener('click', onClickBtnModalClose);
 
 function modalOpenMenu() {
-  modalOpen.classList.toggle('is-hidden');
+  modalOpen.classList.toggle('is-hidden-book-backdrop');
 }
 modalOpen.addEventListener('click', event => {
   if (!event.target.closest('.book-modal')) {
-    modalOpen.classList.add('is-hidden');
+    modalOpen.classList.add('is-hidden-book-backdrop');
   }
 });
 
 function onClickBtnModalClose() {
-  modalOpen.classList.add('is-hidden');
+  modalOpen.classList.add('is-hidden-book-backdrop');
 }

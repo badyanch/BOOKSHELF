@@ -1,19 +1,4 @@
-.modal {
-  display: none;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  box-sizing: border-box;
-
-  position: relative;
-  width: 335px;
-  height: 762px;
-  background: var(--primary-light);
-  border: 2px solid var(--primary-dark);
-  border-radius: 18px;
-}
-.modal-close{
+.modal-close-book-btn{
   position: absolute;
   top: 5%;
   right: 3%;
@@ -26,6 +11,7 @@
     transition: fill 250ms var(--cubic-b);
   }
 }
+
 .data-book {
 
   &__img{
@@ -71,11 +57,22 @@
     line-height: 18px;
     letter-spacing: 1.2;
     color: var(--primary-dark);
+    margin-bottom: 20px;
   }
 
   &__success{
     display: none;
+    width: 324px;
+    height: 28px;
     font-family: DM Sans;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 1.2;
+    color: var(--text-secondary-light);
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__thumb{
@@ -83,6 +80,11 @@
     flex-direction: column;
     padding-left: 24px;
   } 
+
+  &__btn-thumb{
+    display: flex;
+    flex-direction: column;
+  }
 
   &__shop{
     font-family: 'DM Sans';
@@ -121,7 +123,7 @@
   transition: opacity $animation-duration;
 
 }
-.is-hidden{
+.is-hidden-book-backdrop{
   opacity: 0;
   pointer-events: none
 }
@@ -144,5 +146,23 @@
 
 }
 
+.social-shop-thumb{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  
+  
+
+}
+
+
+.social-img{
+  transform: scale(1);
+  &:hover,&:focus{
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+    transform: scale(1.2);
+  }
+  transition: transform 250ms var(--cubic-b);
+}
 
 

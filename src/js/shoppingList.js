@@ -41,7 +41,7 @@ if (localStorage.getItem('shoppingList')) {
             </a>
           </li>
           <li class="shoplist-icons-li">
-            <a href="${buyLinks[2].url}" target="_blank">
+            <a href="${buyLinks[1].url}" target="_blank">
               <div class="shoplist-icon-ibook"></div>
             </a>
           </li>
@@ -102,5 +102,5 @@ if (localStorage.getItem('shoppingList')) {
     localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
   }
 
-// Hide/show pagination container
+  // Hide/show pagination container
 }
