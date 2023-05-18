@@ -1,47 +1,33 @@
 
 
 
-// <<<<<<< supportBranch
-// function getNumberFromStorageNDraw() {
-//     const savedBook = localStorage.getItem('currentUser') || '';
-//     if (savedBook === '') {
-//         return console.log('There is no books in storage');
-//     }
-//     const parsedBooks = JSON.parse(savedBook);
-//     console.log(parsedBooks);
-//     // const listLength = parsedBooks.length;
-function getNumberFromStorageNDraw() {
-    const savedBook = localStorage.getItem('currentUser') || '';
-    if (savedBook === '') {
-        return console.log('There is no books in storage');
+
+ export function getNumberFromStorage() {
+    const savedBook = localStorage.getItem('currentUser');
+    if (!savedBook) {
+        return console.log('Pease login first');
     }
     const parsedBooks = JSON.parse(savedBook);
     console.log(parsedBooks);
-    // const listLength = parsedBooks.length;
+
+    const bookArray = parsedBooks.wishList;
+    if (!bookArray) {
+        return console.log('There is no books in wish-list');
+    }
+    const bookArrLength = bookArray.length
+    console.log(bookArrLength);
+
+     drawBasket(bookArrLength);
+
     
-    // const basketThubm = document.querySelector('.page-nav__cart-number');
-//     console.log(basketThubm);
-//     const markup = `<div class="header-wishlist-counter-thumb">${listLength}</div>`;
-//     basketThubm.classList.remove('.visually-hidden');
-//     basketThubm.textContent = listLength;
-//     basketThubm.insertAdjacentHTML('beforeend', markup);
-// }
-// =======
-// function getNumberFromStorageNDraw() {
-//     const savedBook = localStorage.getItem('card-info') || '';
-//     if (savedBook === '') {
-//         return console.log('There is no books in storage');
-//     }
-//     const parsedBooks = JSON.parse(savedBook);
-//     listLength = parsedBooks.length;
-//     const basketThubm = document.querySelector('.page-nav__cart-number');
-//     console.log(basketThubm);
-//     const markup = `<div class="header-wishlist-counter-thumb">${listLength}</div>`;
-//     basketThubm.classList.remove('.visually-hidden');
-//     basketThubm.textContent = listLength;
-//     basketThubm.insertAdjacentHTML('beforeend', markup);
-// }
-// >>>>>>> main
+}
+    
+function drawBasket(booksLength) {
+    const basketCounterThumb = document.querySelector('.page-nav__cart-number');
+    // console.log(basketCounterThumb);
+    basketCounterThumb.classList.remove('visually-hidden');
+    basketCounterThumb.textContent = booksLength;
+    // const listLength = parsedBooks.length;
+}
 
-
-// getNumberFromStorageNDraw();
+getNumberFromStorage();

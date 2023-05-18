@@ -5,7 +5,7 @@ import './js/authentication/form';
 // import './js/handlers/markup-category-list';
 import './js/test/swiper-supportUkraine';
 import './js/switcher-theme-fn';
-// import './js/test/shoppingListCounter'
+import './js/test/shoppingListCounter'
 
 import './js/test/book-category';
 import './js/test/fetch-category';

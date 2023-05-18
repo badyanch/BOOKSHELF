@@ -398,13 +398,14 @@
 		justify-content: center;
 		align-items: center;
 		top: 2px;
-		right: 10px;
-		width: 15px;
-		height: 15px;
+		right: 6px;
+		width: 18px;
+		height: 18px;
 		border-radius: 50%;
 		background-color: var(--primary-akzent);
-		font-size: 8px;
+		font-size: 9px;
 		color: #ffffff;
+		transition: color 250ms var(--cubic), background-color 250ms var(--cubic);
 	}
 
 	@media screen and (min-width: $tablet) {
@@ -423,6 +424,10 @@
 	}
 
 	&:hover {
+		.page-nav__cart-number{
+			background-color: var(--secondary-akzent);
+			color: var(--primary-dark);
+		}
 		color: var(--default-primary-color);
 		background-color: var(--primary-akzent);
 	}

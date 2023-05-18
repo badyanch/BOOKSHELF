@@ -3,6 +3,7 @@ import { fetchBooksForID } from '../API';
 import { User } from '../authentication/authorization';
 import { IS_USER_LOG, openForm } from '../authentication/form';
 import { auth } from '../authentication/firebase';
+import { getNumberFromStorage } from './shoppingListCounter';
 
 
 const linkAmazonImg = new URL(
@@ -95,16 +96,19 @@ async function onClickBookCard(event) {
 					if (checkStorage.includes(saveBookInStorageButton.dataset.favoriteid)) {
 						return;
 					}
-
+					
 					await user.addToWishList(saveBookInStorageButton.dataset.favoriteid, auth.currentUser.email);
+					getNumberFromStorage();
 					saveBookInStorageButton.textContent = 'remove from the shopping list';
 					discriptionText.style.display = 'block';
+
 				} else if (saveBookInStorageButton.textContent === 'remove from the shopping list') {
 					if (!checkStorage.includes(saveBookInStorageButton.dataset.favoriteid)) {
 						return;
 					}
-
+					
 					await user.removeFromWishlist(saveBookInStorageButton.dataset.favoriteid, auth.currentUser.email);
+					getNumberFromStorage();
 					saveBookInStorageButton.textContent = 'Add to shopping list';
 					discriptionText.style.display = 'none';
 					return;
