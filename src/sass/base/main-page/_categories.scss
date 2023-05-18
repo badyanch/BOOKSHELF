@@ -1,16 +1,16 @@
 
 .section-categories {
-    // width: 356px;
+   
     height: 352px;
 }
 .page-nav__link.section-categories {
-    width: 356px;
+  
     max-height: 472px;
     overflow-x: hidden;
     overflow-y: auto;
     @media screen and (min-width: 768px) {
            height: 472px;
-           width: 335px;
+          
         }
 }
 
@@ -108,3 +108,4 @@
     letter-spacing: -0.04em;
 
 }
+
