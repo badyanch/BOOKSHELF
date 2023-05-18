@@ -9,13 +9,10 @@
 	&:hover {
 		fill: var(--primary-akzent);
 		transition: fill 250ms var(--cubic-b);
-
-		
 	}
 	@media screen and (min-width: $tablet) {
 		top: 5%;
-
-	 }
+	}
 }
 
 .data-book {
@@ -30,19 +27,16 @@
 			width: 192px;
 			height: 294px;
 			object-fit: cover;
-		 }
+		}
 	}
 
 	&__info {
-
-
-		
 		margin-bottom: 40px;
-		
+
 		@media screen and (min-width: 768px) {
 			display: flex;
-		margin-bottom: 40px;
-		 }
+			margin-bottom: 40px;
+		}
 	}
 
 	&__title {
@@ -98,10 +92,9 @@
 		flex-direction: column;
 		padding-left: 0px;
 
-	
 		@media screen and (min-width: 768px) {
-		padding-left: 24px;
-	}
+			padding-left: 24px;
+		}
 	}
 	&__btn-thumb {
 		display: flex;
@@ -109,7 +102,6 @@
 	}
 
 	&__shop {
-		
 		font-family: "DM Sans";
 		color: var(--primary-dark);
 		width: 280px;
@@ -125,15 +117,13 @@
 		border: 2px solid var(--primary-akzent);
 		border-radius: 40px;
 		cursor: pointer;
-		
+
 		@media screen and (min-width: $tablet) {
 			width: 499px;
-
-		 }
-		 @media screen and (min-width: $desktop) {
+		}
+		@media screen and (min-width: $desktop) {
 			width: 499px;
-
-		 }
+		}
 		&:hover,
 		&:focus {
 			background-color: var(--primary-akzent);
@@ -164,7 +154,7 @@
 	width: 100%;
 	top: 54%;
 	left: 50%;
-	max-width:375px;
+	max-width: 375px;
 
 	background: #ffffff;
 	border: 2px solid #111111;
@@ -176,9 +166,7 @@
 	@media screen and (min-width: $tablet) {
 		max-width: 579px;
 		top: 50%;
-
-	 }
-	
+	}
 }
 
 .social-shop-thumb {
@@ -189,10 +177,13 @@
 
 .social-img {
 	transform: scale(1);
+	filter: grayscale(100%);
 	&:hover,
 	&:focus {
 		filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+		filter: grayscale(0%);
+
 		transform: scale(1.2);
 	}
-	transition: transform 250ms var(--cubic-b);
+	transition: transform 250ms var(--cubic-b), filter 250ms var(--cubic-b);
 }

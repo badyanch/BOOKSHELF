@@ -112,6 +112,10 @@
 	background-size: 100%;
 	width: 32px;
 	height: 11px;
+	@media screen and (min-width: 768px) {
+		width: 48px;
+		height: 15px;
+	}
 }
 
 .shoplist-icon-ibook {
@@ -121,6 +125,10 @@
 	background-size: 100%;
 	width: 16px;
 	height: 16px;
+	@media screen and (min-width: 768px) {
+		width: 32px;
+		height: 30px;
+	}
 }
 
 .shoplist-icon-bookshop {
@@ -131,6 +139,10 @@
 	width: 16px;
 	height: 16px;
 	right: 14;
+	@media screen and (min-width: 768px) {
+		width: 32px;
+		height: 30px;
+	}
 }
 
 .shoplist-icons {
@@ -142,8 +154,8 @@
 	margin-bottom: 10px;
 	margin-right: 14px;
 	@media screen and (min-width: 768px) {
-		bottom: 24;
-		right: 56;
+		bottom: 39px;
+		right: 125px;
 	}
 }
 
@@ -153,6 +165,22 @@
 	align-items: center;
 	justify-content: space-between;
 	list-style: none;
+
+	@media screen and (min-width: 768px) {
+		gap: 16px;
+	}
+}
+.shoplist-icons-li {
+	transform: scale(1);
+	filter: grayscale(100%);
+	&:hover,
+	&:focus {
+		filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+		filter: grayscale(0%);
+
+		transform: scale(1.2);
+	}
+	transition: transform 250ms var(--cubic-b), filter 250ms var(--cubic-b);
 }
 
 .shoplist-book-container {
@@ -216,6 +244,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	@media screen and (min-width: 768px) {
+		width: 450px;
 		margin-top: 24px;
 		margin-bottom: 4px;
 		height: 18px;
@@ -241,6 +270,10 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	@media screen and (min-width: 768px) {
+		width: 450px;
+		margin-bottom: 14px;
+	}
 }
 
 .shoplist-book-description {
@@ -252,9 +285,17 @@
 	font-size: 14px;
 	line-height: 1.29;
 	letter-spacing: -0.04em;
-	white-space: wrap;
+	white-space: normal;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	@media screen and (min-width: 768px) {
+		width: 508px;
+		height: 53px;
+		margin-bottom: 48px;
+	}
+	@media screen and (min-width: 1440px) {
+		width: 808px;
+	}
 }
 
 .shoplist-book-author {
@@ -271,8 +312,7 @@
 	text-overflow: ellipsis;
 	@media screen and (min-width: 768px) {
 		margin-bottom: 14px;
-		align-self: flex-end;
-		width: 97px;
+		width: 376px;
 
 		font-style: italic;
 		font-weight: 400;
