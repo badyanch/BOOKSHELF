@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="light-theme" lang="ru">
 
 <head>
 	<meta charset="UTF-8" />
@@ -9,10 +9,45 @@
 </head>
 
 <body>
+<<<<<<< Updated upstream
 	<!--  -->
 	<include src="./partials/common/header.html"></include>
 	<!--  -->
 	<include src="./partials/common/authorization.html"></include>
+=======
+  <!--  -->
+  <include src="./partials/common/header.html"></include>
+
+  <a class="page-nav__link" href="./ShoppingPage.html"></a>
+  <main>
+    <div class="main container">
+      <aside class="aside">
+        <div class="section-categories-suppot-thumb">
+          <section class="section-categories">
+            <ul class="list-categories"></ul>
+          </section>
+          <section class="section-support">
+            <!--  -->
+            <include src="./partials/common/supportUkraine.html"></include>
+          </section>
+      </aside>
+      <section class="section-books-cards">
+        <h1 class="books-cards__title"></h1>
+        <ul class="books-cards__list"></ul>
+      </section>
+
+    </div>
+    </div>
+  </main>
+
+  <div class="book-backdrop is-hidden-book-backdrop" data-book-modal-open>
+    <include src="./partials/HomePage/popUp.html"></include>
+  </div>
+
+  <!--  -->
+  <include src="./partials/common/authorization.html"></include>
+  <include src="./partials/HomePage/scroll.html"></include>
+>>>>>>> Stashed changes
 
 
 

@@ -1,5 +1,8 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 import { removeAllListeners } from "process";
 
 const switcherStatus = document.querySelector(".switcher-theme__status")
@@ -37,11 +40,14 @@ export function onSwitcherClick() {
     });
     
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     
     
     document.querySelector(".current-category").style.color = "#EAC645";
     // document.querySelector(".category__link").style.color = "white";
 =======
+=======
+>>>>>>> Stashed changes
     function changeColor() {
       document.querySelector(".books-cards__title").style.color = "white";
       if (!this.classList.contains("current-category")) {
@@ -55,6 +61,9 @@ export function onSwitcherClick() {
       } 
      }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     document.querySelector(".books-cards__title").style.color = "white";
     // document.querySelector(".books-cards__title-accent")
@@ -63,8 +72,13 @@ export function onSwitcherClick() {
     const element = document.querySelector(".switcher-theme__status");
     document.querySelector(".current-category").style.color = null;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     
     // document.querySelector(".current-category").classList.remove("dark-theme")
+=======
+
+    document.querySelector(".page-header").style.backgroundColor = null;
+>>>>>>> Stashed changes
 =======
 
     document.querySelector(".page-header").style.backgroundColor = null;
@@ -75,6 +89,11 @@ export function onSwitcherClick() {
     });
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    // el.removeEventListener("click", changeColor);
+
+>>>>>>> Stashed changes
 =======
     // el.removeEventListener("click", changeColor);
 

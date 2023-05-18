@@ -1,0 +1,158 @@
+.modal-close-book-btn {
+	position: absolute;
+	top: 5%;
+	right: 3%;
+	background-color: inherit;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	&:hover {
+		fill: var(--primary-akzent);
+		transition: fill 250ms var(--cubic-b);
+	}
+}
+
+.data-book {
+	&__img {
+		width: 192px;
+		height: 294px;
+		object-fit: cover;
+	}
+
+	&__info {
+		display: flex;
+		margin-bottom: 40px;
+	}
+
+	&__title {
+		font-family: "DM Sans";
+		font-style: normal;
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 28px;
+		letter-spacing: 1.2;
+		margin-bottom: 8px;
+		color: var(--primary-dark);
+	}
+
+	&__subtitle {
+		font-family: "DM Sans";
+		font-style: italic;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 18px;
+		letter-spacing: 1.3;
+		margin-bottom: 20px;
+		color: var(--text-secondary-light);
+	}
+
+	&__description {
+		font-family: DM Sans;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 18px;
+		letter-spacing: 1.2;
+		color: var(--primary-dark);
+		margin-bottom: 20px;
+	}
+
+	&__success {
+		display: none;
+		transition: opacity 2s;
+		width: 324px;
+		height: 28px;
+		font-family: DM Sans;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
+		letter-spacing: 1.2;
+		color: var(--text-secondary-light);
+		margin-top: 8px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__thumb {
+		display: flex;
+		flex-direction: column;
+		padding-left: 24px;
+	}
+
+	&__btn-thumb {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__shop {
+		font-family: "DM Sans";
+		color: var(--primary-dark);
+		width: 499px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: inherit;
+		padding: 20px;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 24px;
+		letter-spacing: 1.3;
+		text-transform: uppercase;
+		border: 2px solid var(--primary-akzent);
+		border-radius: 40px;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			background-color: var(--primary-akzent);
+			color: var(--primary-light);
+			transition: color 250ms var(--cubic-b), background-color 250ms var(--cubic-b);
+		}
+	}
+}
+
+.book-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(17, 17, 17, 0.4);
+	z-index: 3;
+	transition: opacity $animation-duration;
+}
+.is-hidden-book-backdrop {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.book-modal {
+	position: absolute;
+	padding: 40px;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	max-width: 579px;
+
+	background: #ffffff;
+	border: 2px solid #111111;
+	border-radius: 18px;
+	margin: 0 auto;
+
+	transform: translate(-50%, -50%);
+	transition: transform 500ms var(--cubic-b);
+}
+
+.social-shop-thumb {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.social-img {
+	transform: scale(1);
+	&:hover,
+	&:focus {
+		filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+		transform: scale(1.2);
+	}
+	transition: transform 250ms var(--cubic-b);
+}

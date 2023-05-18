@@ -2,9 +2,37 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
   line-height: calc(18 / 14);
-  color: var(--primary-dark);
-  background-color: var(--bg-light);
+ 
 }
+<<<<<<< Updated upstream
+=======
+
+
+
+.body-lock {
+  overflow: hidden;
+}
+
+.section-categories-suppot-thumb{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 40px 0 40px;
+
+  @media screen and (min-width: 768px) {
+      flex-direction: row;
+      gap: 32px;
+      margin: 40px 0 100px;
+    }
+
+  @media screen and (min-width: 1440px) {
+      flex-direction: column;
+      gap: 86px;
+      margin: 40px 0 0 0;
+    }
+}
+>>>>>>> Stashed changes
 
 .container {
   max-width: 375px;

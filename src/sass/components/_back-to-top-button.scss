@@ -1,0 +1,56 @@
+<<<<<<< Updated upstream
+=======
+.scrollBtn {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 50px;
+  right: 20px;
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(79, 46, 232, 0.3);
+  opacity: 0;
+      transition: opacity 0.4s var(--cubic);
+
+  &:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+
+  background: var(--primary-akzent);
+  transition: background var(--time) var(--cubic);
+}
+
+&.visible {
+opacity: 1;
+}
+ }
+
+.scrollBtn:hover:before, .scrollBtn:focus:before {
+   background: radial-gradient(var(--secondary-light), rgba(79, 46, 232, 0.3));
+}
+
+.scroll__icon {
+  fill: var(--primary-light);
+  z-index: 998;
+  transition: fill var(--time) var(--cubic);
+}
+
+.scrollBtn:hover .scroll__icon, .scrollBtn:focus .scroll__icon {
+  fill: var(--primary-akzent);
+}
+
+
+
+ 
+>>>>>>> Stashed changes
