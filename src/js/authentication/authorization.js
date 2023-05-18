@@ -186,7 +186,7 @@ export class User {
 			localStorage.removeItem('currentUser');
 
 			Notify.success('Signed out');
-			location.reload();
+			window.location.replace("index.html");
 		} catch (error) {
 			console.error(error.message);
 			Notify.failure(error.code);

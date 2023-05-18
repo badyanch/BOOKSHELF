@@ -13,5 +13,4 @@ import './js/test/swiper-supportUkraine';
 import './js/header/index';
 
 import './js/switcher-theme-fn';
-
-import './js/test/shoppData'
+// 
