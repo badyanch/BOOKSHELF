@@ -16,7 +16,6 @@ import './js/test/markup-top-books';
 import './js/test/pop-up';
 
 
-import './js/shoppingList';
 
 import './js/test/mobileMenu';
 
