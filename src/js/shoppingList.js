@@ -3,6 +3,7 @@ import { User } from "./authentication/authorization";
 import { auth } from './authentication/firebase';
 
 const shoppingListContainer = document.querySelector('.shopping-list__container');
+const emptyShoppingList = document.querySelector('.shopping-list__empty-page');
 
 if (localStorage.getItem('currentUser')) {
 	let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -14,8 +15,6 @@ if (localStorage.getItem('currentUser')) {
 		getBooksData(wishList)
 			.then((booksData) => {
 				dataOfBooks = booksData;
-				console.log(dataOfBooks);
-
 				const shoplistBooks = dataOfBooks.map(makeShoplistMarkup);
 
 				function makeShoplistMarkup({
@@ -32,7 +31,7 @@ if (localStorage.getItem('currentUser')) {
 					shoplistBookContainer.dataset.id = _id;
 
 					const shoplistMarkup = `
-            <img src="${book_image}" class="shoplist-book-img">
+            <img src="${book_image}" class="shoplist-book-img" alt="${title}">
             <div class="shoplist-desc-container">
               <h4 class="shoplist-book-title">${title}</h4>
               <p class="shoplist-book-genre">${list_name}</p>
@@ -68,9 +67,20 @@ if (localStorage.getItem('currentUser')) {
 
 				const newShoppingListContainer = document.createElement('div');
 				newShoppingListContainer.classList.add('shopping-list__container');
-				shoplistBooks.forEach(book => {
-					newShoppingListContainer.appendChild(book);
-				});
+
+				function updateShoppingListContainer() {
+					newShoppingListContainer.innerHTML = '';
+
+					if (wishList.length === 0) {
+						newShoppingListContainer.appendChild(emptyShoppingList);
+					} else {
+						shoplistBooks.forEach((book) => {
+							newShoppingListContainer.appendChild(book);
+						});
+					}
+				}
+
+				updateShoppingListContainer();
 
 				shoppingListContainer.replaceWith(newShoppingListContainer);
 
@@ -78,11 +88,11 @@ if (localStorage.getItem('currentUser')) {
 
 				function removeBookFromShoppingList(id) {
 					const user = new User();
-					wishList = wishList.filter(book => book._id !== id);
+					wishList = wishList.filter((book) => book._id !== id);
 					user.removeFromWishlist(id, auth.currentUser.email);
 
 					if (wishList.length === 0) {
-						newShoppingListContainer.replaceWith(shoppingListContainer);
+						updateShoppingListContainer();
 					} else {
 						const bookContainerToRemove = newShoppingListContainer.querySelector(
 							`[data-id="${id}"]`
@@ -95,14 +105,14 @@ if (localStorage.getItem('currentUser')) {
 					if (event.target.classList.contains('shoplist-trash')) {
 						const bookContainer = event.target.closest('.shoplist-book-container');
 						const id = bookContainer.dataset.id;
-						console.log(id);
 						removeBookFromShoppingList(id);
 					}
 				}
-
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.error('Error retrieving books data:', error);
 			});
+	} else {
+		shoppingListContainer.appendChild(emptyShoppingList);
 	}
 }
