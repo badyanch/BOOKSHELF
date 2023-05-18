@@ -26,23 +26,28 @@ export const refEl = {
 }
 
 const user = new User()
-let IS_FORM_OPEN = false;
-let IS_USER_LOG = false;
-checkUserLogIn()
 
+
+checkUserLogIn()
+// user.signOut()
+let IS_FORM_OPEN = false;
+export let IS_USER_LOG = false;
 async function checkUserLogIn() {
 	try {
 		const result = await user.isAuthenticated();
 		if (result) {
 			console.log('Пользователь аутентифицирован');
-			console.log(auth.currentUser.email);
 			const userProfile = await user.getInfoUserFromDb(auth.currentUser.email);
+
 			refEl.userProfileBtn.textContent = userProfile.userName
+			refEl.nameUser.textContent = userProfile.userName
+
 			refEl.openFormBtn.style.display = 'none';
 			document.body.classList.add('is-logged');
-			refEl.nameUser.textContent = userProfile.userName
-			IS_USER_LOG = true
 			refEl.pageHeader.classList.add('is-logged');
+
+			IS_USER_LOG = true
+
 			return
 		} else {
 			console.log('Пользователь не аутентифицирован');
@@ -58,7 +63,7 @@ async function checkUserLogIn() {
 }
 
 
-function openForm() {
+export function openForm() {
 	showForm()
 	closeForm()
 }
@@ -85,8 +90,6 @@ function closeForm() {
 		IS_FORM_OPEN = false;
 	}
 }
-
-
 
 //function is using on sign up form 
 function toSignIn(evt) {
@@ -141,19 +144,19 @@ async function onSubmitSignIn(evt) {
 
 
 
-refEl.signOutbtn.addEventListener('click', function() {
-	    user.signOut();
-	    // код, який потрібен після виходу користувача
-	    refEl.openFormBtn.textContent = 'Sign Up / Sign In';
-	    refEl.pageHeader.classList.remove('is-logged');
-	    Notify.success('You have been logged out.');
-	  });
+refEl.signOutbtn.addEventListener('click', function () {
+	user.signOut();
+	// код, який потрібен після виходу користувача
+	refEl.openFormBtn.textContent = 'Sign Up / Sign In';
+	refEl.pageHeader.classList.remove('is-logged');
+	Notify.success('You have been logged out.');
+});
 
-	  refEl.singOutMobile.addEventListener('click', function() {
-	    user.signOut();
-	    // код, який потрібен після виходу користувача
-	    refEl.openFormBtn.textContent = 'Sign Up / Sign In';
-	    refEl.pageHeader.classList.remove('is-logged');
-	    Notify.success('You have been logged out.');
-	  });
+refEl.singOutMobile.addEventListener('click', function () {
+	user.signOut();
+	// код, який потрібен після виходу користувача
+	refEl.openFormBtn.textContent = 'Sign Up / Sign In';
+	refEl.pageHeader.classList.remove('is-logged');
+	Notify.success('You have been logged out.');
+});
 
