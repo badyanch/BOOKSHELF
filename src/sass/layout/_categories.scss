@@ -4,7 +4,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     @media screen and (min-width: 768px) {
-            height: 472px;
+            height: 465px;
             
         }
                 @media screen and (min-width: 1440px) {
@@ -24,13 +24,24 @@
 .category__link-all {
     text-decoration: none;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 1.33;
+    font-size: 16px;
+    line-height: 1.12;
     letter-spacing: -0.02em;
     color: $secondary-text-color;
+    display: block;
+    transition: font-weight 250ms var(--cubic);
+    @media screen and (min-width: $tablet) {
+        font-size: 18px;
+        line-height: 1.33;
+        letter-spacing: -0.02em;
+    }
 
     .dark-theme & {
         color: $secondary-text-color-darkt;
+    }
+
+    &:hover {
+        font-weight: 700;
     }
 }
 

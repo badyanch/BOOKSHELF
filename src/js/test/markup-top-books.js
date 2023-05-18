@@ -2,6 +2,7 @@ import { fetchSearchResult } from './fetch-search-result';
 import { fetchCategoryList } from './fetch-category';
 import { createMarkupBooks } from './book-category';
 import { addHeading } from './book-category';
+import { changeCurrentCategory } from './change-current-category';
 const refs = {
 	booksCardsList: document.querySelector('.books-cards__list'),
 	booksCardsTitle: null,
@@ -97,6 +98,7 @@ async function onClickSeeMore(evt) {
 	//   console.log(category);
 	refs.booksCardsTitle = document.querySelector('.books-cards__title');
 	refs.booksCardsTitle.remove();
+	changeCurrentCategory(category);
 	addHeading(category);
 	refs.booksCardsList.innerHTML = '';
 	const categoryItem = await fetchCategoryList(category); // category fetch querry
