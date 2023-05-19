@@ -1,49 +1,60 @@
 // Get the shopping list container element
 const shoppingListContainer = document.querySelector('.shopping-list__container');
 
-// Check if shoppingList exists in localStorage
-if (localStorage.getItem('shoppingList')) {
-  // Retrieve the shoppingList from localStorage
-  let shoppingList = JSON.parse(localStorage.getItem('shoppingList'));
+if (localStorage.getItem('currentUser')) {
+	let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-  // Create markup for each book in the shoppingList
-  const shoplistBooks = shoppingList.map(makeShoplistMarkup);
+	if (currentUser.hasOwnProperty('wishList')) {
+		let wishList = currentUser.wishList;
+		let dataOfBooks = [];
 
-  // Create markup for a single book
-  function makeShoplistMarkup({ bookImg, author, listName, description, title, buyLinks, id }) {
-    const shoplistBookContainer = document.createElement('div');
-    shoplistBookContainer.classList.add('shoplist-book-container');
-    shoplistBookContainer.dataset.id = id;
+		getBooksData(wishList)
+			.then((booksData) => {
+				dataOfBooks = booksData;
+				const shoplistBooks = dataOfBooks.map(makeShoplistMarkup);
 
-    const shoplistMarkup = `
-      <img src="${bookImg}" class="shoplist-book-img">
-      <div class="shoplist-desc-container">
-        <h4 class="shoplist-book-title">${title}</h4>
-        <p class="shoplist-book-genre">${listName}</p>
-        <p class="shoplist-book-description">${description}</p>
-        <p class="shoplist-book-author">${author}</p>
-      </div>
-      <div class="shoplist-icons">
-        <ul class="shoplist-icons-list">
-          <li class="shoplist-icons-li">
-            <a href="${buyLinks[0].url}" target="_blank">
-              <div class="shoplist-icon-amazon"></div>
-            </a>
-          </li>
-          <li class="shoplist-icons-li">
-            <a href="${buyLinks[2].url}" target="_blank">
-              <div class="shoplist-icon-ibook"></div>
-            </a>
-          </li>
-          <li class="shoplist-icons-li">
-            <a href="${buyLinks[4].url}" target="_blank">
-              <div class="shoplist-icon-bookshop"></div>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="shoplist-trash"></div>
-    `;
+				function makeShoplistMarkup({
+					book_image,
+					author,
+					list_name,
+					description,
+					title,
+					buy_links,
+					_id,
+				}) {
+					const shoplistBookContainer = document.createElement('div');
+					shoplistBookContainer.classList.add('shoplist-book-container');
+					shoplistBookContainer.dataset.id = _id;
+
+					const shoplistMarkup = `
+            <img src="${book_image}" class="shoplist-book-img" alt="${title}">
+            <div class="shoplist-desc-container">
+              <h4 class="shoplist-book-title">${title}</h4>
+              <p class="shoplist-book-genre">${list_name}</p>
+              <p class="shoplist-book-description">${description || 'Sorry, book\'s description not found'}</p>
+              <p class="shoplist-book-author">${author}</p>
+            </div>
+            <div class="shoplist-icons">
+              <ul class="shoplist-icons-list">
+                <li class="shoplist-icons-li">
+                  <a href="${buy_links[0].url}" target="_blank">
+                    <div class="shoplist-icon-amazon"></div>
+                  </a>
+                </li>
+                <li class="shoplist-icons-li">
+                  <a href="${buy_links[1].url}" target="_blank">
+                    <div class="shoplist-icon-ibook"></div>
+                  </a>
+                </li>
+                <li class="shoplist-icons-li">
+                  <a href="${buy_links[4].url}" target="_blank">
+                    <div class="shoplist-icon-bookshop"></div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="shoplist-trash"></div>
+          `;
 
     shoplistBookContainer.innerHTML = shoplistMarkup;
 
@@ -62,19 +73,20 @@ if (localStorage.getItem('shoppingList')) {
   // Add event listener to each trash icon
   newShoppingListContainer.addEventListener('click', handleTrashIconClick);
 
-  // Remove a book from the shopping list
-  function removesBookFromShoppingList(id) {
-    shoppingList = shoppingList.filter(book => book.id !== id);
-    updateBookOnStorage();
+				function removeBookFromShoppingList(id) {
+					const user = new User();
+					wishList = wishList.filter((book) => book._id !== id);
+					user.removeFromWishlist(id, auth.currentUser.email);
 
-    // Fix updating on the page
-    if (shoppingList.length === 0) {
-      newShoppingListContainer.replaceWith(shoppingListContainer);
-    } else {
-      const bookContainerToRemove = newShoppingListContainer.querySelector(`[data-id="${id}"]`);
-      bookContainerToRemove.remove();
-    }
-  }
+					if (wishList.length === 0) {
+						updateShoppingListContainer();
+					} else {
+						const bookContainerToRemove = newShoppingListContainer.querySelector(
+							`[data-id="${id}"]`
+						);
+						bookContainerToRemove.remove();
+					}
+				}
 
   // Handle click event on trash icon
   function handleTrashIconClick(event) {
@@ -91,3 +103,4 @@ if (localStorage.getItem('shoppingList')) {
   }
 }
 // Hide/show pagination container
+
